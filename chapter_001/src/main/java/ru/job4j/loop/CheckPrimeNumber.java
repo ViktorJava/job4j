@@ -17,10 +17,16 @@ public class CheckPrimeNumber {
      * @return true/false
      */
     public boolean check(int finish) {
-        boolean result = false;
-        if (finish < 2) result = false;
-        for (int i = 2; i < finish; i++)
-            if (finish % i == 0) result = false;
+        boolean result = true;
+        if (finish < 2) {
+            result = false;
+        }
+        for (int i = 2; i < finish; i++) {
+            {
+                if (finish % i == 0) result = false;
+                break;
+            }
+        }
         return result;
     }
 }

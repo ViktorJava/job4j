@@ -14,6 +14,7 @@ public class Mortgage {
         double bill = increase + amount;
 
         while (bill > 0) {
+            //
             bill = bill - monthly;
             countMonth++;
         }

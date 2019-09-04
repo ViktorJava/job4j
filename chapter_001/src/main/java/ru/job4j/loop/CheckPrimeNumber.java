@@ -24,7 +24,7 @@ public class CheckPrimeNumber {
         for (int i = 2; i < finish; i++) {
             {
                 if (finish % i == 0) result = false;
-                break;
+//                break;
             }
         }
         return result;

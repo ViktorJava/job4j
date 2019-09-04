@@ -36,6 +36,4 @@ public class PrimeNumberTest {
         int count = primeNumber.calc(2);
         assertThat(count, is(1));
     }
-
-
 }

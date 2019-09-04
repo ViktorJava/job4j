@@ -7,7 +7,7 @@ package ru.job4j.loop;
  * число 1 не является простым числом.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
- * @version 0.1
+ * @version 0.2
  * @since 03.09.2019
  */
 public class PrimeNumber {
@@ -20,15 +20,12 @@ public class PrimeNumber {
      * @return int кол-во простых чисел
      */
     public int calc(int finish) {
+        CheckPrimeNumber checkPrimeNumber = new CheckPrimeNumber();
+
         int count = 0;
         for (int i = 2; i <= finish; i++) {
-            boolean isPrime = true;
-            for (int j = 2; j <= i / j; j++) {
-                if (i % j == 0) {
-                    isPrime = false;
-                }
-            }
-            if (isPrime) count++;
+            if (checkPrimeNumber.check(i))
+                count++;
         }
         return count;
     }

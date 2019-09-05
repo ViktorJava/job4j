@@ -21,17 +21,11 @@ public class Mortgage {
      */
     public static int year(int amount, int monthly, int percent) {
         int amountWithPercent = (amount / 100) * percent + amount;//задолженность с учётом процента
-        int numberOfPayments = amountWithPercent / monthly; //кол-во платежей
-        int bill = amountWithPercent;
+        int numberOfPayments = amountWithPercent / monthly; //общее кол-во платежей
         int year = 0;
-        int month = 0;
-//        int payPerYear = monthly * 12; //всего уплатить в год
-//        int dolgCherezGod = amountWithPercent - payPerYear;//долг через год
-//        int dolgCherezMesiac = amountWithPercent - monthly;//долг через месяц
-        //int a = (int) Math.ceil((double) numberOfPayments / 12);
 
-        while (bill > monthly) {
-//        while (numberOfPayments>0) {
+        while (true) {
+
             if (numberOfPayments > 12) {
                 numberOfPayments -= 12;
                 year++;
@@ -39,13 +33,6 @@ public class Mortgage {
             if (numberOfPayments <= 12) {
                 year++;
                 break;
-            }
-            bill = bill - monthly;
-            numberOfPayments--;
-            month++;
-
-            if (month == 12) {
-                year++;
             }
         }
         return year;

@@ -24,7 +24,7 @@ public class Mortgage {
         int numberOfPayments = amountWithPercent / monthly; //общее кол-во платежей
         int year = 0;
 
-        while (true) {
+        while (numberOfPayments > 0) {
 
             if (numberOfPayments > 12) {
                 numberOfPayments -= 12;

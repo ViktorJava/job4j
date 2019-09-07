@@ -29,9 +29,9 @@ public class EndsWithTest {
     @Test
     public void whenNotFinishedWithPostfixThenFalse() {
         char[] word = {'H', 'e', 'l', 'l', 'o' };
-        char[] post = {'l', 'l', 'o' };
+        char[] post = {'l', 'l', 'i' };
         boolean result = EndsWith.endsWith(word, post);
-        assertThat(result, is(true));
+        assertThat(result, is(false));
     }
 
 }

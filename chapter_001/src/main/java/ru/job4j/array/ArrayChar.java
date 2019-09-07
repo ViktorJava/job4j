@@ -17,11 +17,9 @@ public class ArrayChar {
      * @return true/false
      */
     public static boolean startsW(char[] word, char[] pref) {
-        boolean result = false;
+        boolean result = true;
         for (int index = 0; index < pref.length; index++) {
-            if (pref[index] == word[index]) {
-                result = true;
-            } else {
+            if (pref[index] != word[index]) {
                 result = false;
                 break;
             }

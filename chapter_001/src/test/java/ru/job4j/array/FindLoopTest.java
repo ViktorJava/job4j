@@ -38,4 +38,34 @@ public class FindLoopTest {
         assertThat(result, is(expect));
     }
 
+    /**
+     * Тест нахождения значения 2 в диапазоне массива
+     */
+    @Test
+    public void whenFind3() {
+        FindLoop findLoop = new FindLoop();
+        int[] input = new int[]{5, 2, 10, 2, 4};
+        int value = 2;
+        int start = 2;
+        int finish = 4;
+        int result = findLoop.indexOf(input, value, start, finish);
+        int expect = 3;
+        assertThat(result, is(expect));
+    }
+
+    /**
+     * Тест не нахождения значения в диапазоне массива
+     */
+    @Test
+    public void whenDoNotFind12() {
+        FindLoop findLoop = new FindLoop();
+        int[] input = new int[]{5, 2, 10, 2, 4};
+        int value = 12;
+        int start = 2;
+        int finish = 4;
+        int result = findLoop.indexOf(input, value, start, finish);
+        int expect = -1;
+        assertThat(result, is(expect));
+    }
+
 }

@@ -68,4 +68,15 @@ public class FindLoopTest {
         assertThat(result, is(expect));
     }
 
+    /**
+     * Тест сортировки массива по возрастанию
+     */
+    @Test
+    public void whenSort5() {
+        FindLoop findLoop = new FindLoop();
+        int[] input = new int[]{5, 4, 3, 2, 1};
+        int[] result = findLoop.sort(input);
+        int[] expected = {1, 2, 3, 4, 5};
+        assertThat(result, is(expected));
+    }
 }

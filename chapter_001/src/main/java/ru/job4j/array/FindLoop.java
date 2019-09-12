@@ -1,7 +1,9 @@
 package ru.job4j.array;
 
 /**
- * * ТЗ [#173370]: 6.1. Классический поиск перебором.
+ * ТЗ [#173370]: 6.1. Классический поиск перебором.
+ * ТЗ [#173381]: 6.5. Поиск индекса в диапазоне.
+ * ТЗ [#173382]: 6.5.1. Сортировка выборкой.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
  * @version 0.1
@@ -28,11 +30,11 @@ public class FindLoop {
     }
 
     /**
-     * Метод поиска значения в диапазоне массиве
+     * Метод поиска значения в диапазоне массивa
      *
-     * @param data данные
-     * @param el искомое значение
-     * @param start начало диапазона
+     * @param data   данные
+     * @param el     искомое значение
+     * @param start  начало диапазона
      * @param finish конец диапазона
      * @return возвращает индекс найденного элемента или -1 если ничего не найдено
      */
@@ -46,5 +48,22 @@ public class FindLoop {
             }
         }
         return rst;
+    }
+
+    /**
+     * Сортировка выборкой.
+     *
+     * @param data массив чисел, который нужно отсортировать по возрастанию.
+     * @return возвращает отсортированный по возрастанию массив
+     */
+    public int[] sort(int[] data) {
+        for (int i = 0; i < data.length; i++) {
+
+            int min = indexOf(data, i + 1, i, data.length);
+                int temp = data[min];
+                data[min] = data[i];
+                data[i] = temp;
+        }
+        return data;
     }
 }

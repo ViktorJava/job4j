@@ -15,7 +15,7 @@ package ru.job4j.loop;
 public class Fitness {
 
     /**
-     * Метод calc(int ivan, int nik) должен возвращать шахматную доску из символов "х" и пробелов
+     * Метод calc(int ivan, int nik) должен возвращать колличество месяцев
      *
      * @param ivan сила Ивана
      * @param nik  сила Ника

@@ -1,20 +1,20 @@
-package ru.job4j.area;
+package ru.job4j.array;
 
 /**
- * ТЗ [#173374]: 6.7. Игровое поле представляет из себя массив заполненный символами '_'
- * (подчеркивание) и 'X' - крестик. Цель игры расположить крестики в линию на 5 элементов.
+ * ТЗ [#173374]: 6.7. Игровое поле представляет из себя массив заполненный символами '_'(подчеркивание)
+ * и 'X' - крестик. Цель игры расположить крестики в линию на 5 элементов.
  * Линия может быть горизонтальная или вертикальная. Задачей будет написать метод, который будет проверять,
  * что на поле находится выигрышная ситуация.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
- * @version 0.1
- * @since 13.09.2019
+ * @version 0.2
+ * @since 26.09.2019
  */
 public class MatrixCheck {
 
     /**
      * Метод должен проверить, что в квадратном массиве
-     * есть строчки или столбцы заполненные только символов 'X'
+     * есть строчки или столбцы заполненные только символом 'X'
      * Массив всегда квадратный 5 на 5 элементов
      *
      * @param board массив данных описывающий доску
@@ -22,40 +22,24 @@ public class MatrixCheck {
      */
     public static boolean isWin(char[][] board) {
         boolean result = false;
-        boolean zeroCells = false;
-        int verticalCell = 0;
-        int countHorizontal = 0;
-        int countVertical = 0;
-
+        int horizontalCells = 0;
+        int verticalCells = 0;
         for (int row = 0; row < board.length; row++) {
-            for (int cell = 0; cell < board.length; cell++) {
-                char sign = board[row][cell];
-                System.out.print(sign);
-
-                if (sign == 'X') {
-                    if (cell == 0) {
-                        zeroCells = true;
-                        countHorizontal++;
+            if (board[row][row] == 'X') {
+                for (int cell = 0; cell < board.length; cell++) {
+                    if (board[row][cell] == 'X') {
+                        horizontalCells++;
                     }
-                    if (cell > 0 && zeroCells == true) {
-                        countHorizontal++;
-                    }
-                    if (row == 0) {
-                        verticalCell = cell;
-                        countVertical++;
-                    }
-                    if (cell == verticalCell && row > 0) {
-                        countVertical++;
+                    if (board[cell][row] == 'X') {
+                        verticalCells++;
                     }
                 }
-                if (sign == '_') {
-                    zeroCells = false;
+                if (verticalCells == board.length || horizontalCells == board.length) {
+                    result = true;
+                    break;
                 }
+                break;
             }
-            System.out.println();
-        }
-        if (countVertical == 5 || countHorizontal == 5) {
-            result = true;
         }
         return result;
     }

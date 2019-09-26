@@ -1,6 +1,7 @@
 package ru.job4j.area;
 
 import org.junit.Test;
+import ru.job4j.array.MatrixCheck;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;

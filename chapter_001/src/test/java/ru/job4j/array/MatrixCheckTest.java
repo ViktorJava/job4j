@@ -1,7 +1,6 @@
 package ru.job4j.array;
 
 import org.junit.Test;
-import ru.job4j.array.MatrixCheck;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -13,6 +12,9 @@ import static org.junit.Assert.assertThat;
  */
 public class MatrixCheckTest {
 
+    /**
+     * Тест выигрышной ситуации
+     */
     @Test
     public void whenDataMonoByTrueThenTrue() {
         char[][] input = {
@@ -25,6 +27,9 @@ public class MatrixCheckTest {
         assertThat(result, is(true));
     }
 
+    /**
+     * Тест проигрышной ситуации
+     */
     @Test
     public void whenDataNotMonoByTrueThenFalse() {
         char[][] input = {

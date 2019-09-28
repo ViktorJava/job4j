@@ -1,4 +1,4 @@
-package ru.job4j.area;
+package ru.job4j.array;
 
 import org.junit.Test;
 import ru.job4j.array.MatrixCheck;

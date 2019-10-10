@@ -64,3 +64,4 @@ nb-configuration.xml
 *.log
 # thumbnails
 Thumbs.db
+chapter_001/src/main/resources/

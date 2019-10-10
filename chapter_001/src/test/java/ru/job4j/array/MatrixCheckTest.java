@@ -22,7 +22,8 @@ public class MatrixCheckTest {
                 {'_', '_', 'X', '_', '_'},
                 {'_', '_', 'X', '_', '_'},
                 {'_', '_', 'X', '_', '_'},
-                {'_', '_', 'X', '_', '_'},};
+                {'_', '_', 'X', '_', '_'},
+        };
         boolean result = MatrixCheck.isWin(input);
         assertThat(result, is(true));
     }
@@ -37,7 +38,8 @@ public class MatrixCheckTest {
                 {'_', '_', 'X', '_', '_'},
                 {'_', 'X', '_', '_', '_'},
                 {'_', '_', 'X', '_', '_'},
-                {'_', '_', 'X', '_', '_'},};
+                {'_', '_', 'X', '_', '_'},
+        };
         boolean result = MatrixCheck.isWin(input);
         assertThat(result, is(false));
     }

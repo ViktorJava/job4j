@@ -20,7 +20,7 @@ public class Mortgage {
      * @return количество лет для погашения кредита
      */
     public static int year(int amount, int monthly, int percent) {
-        int amountWithPercent = (amount / 100) * percent + amount;//задолженность с учётом процента
+        int amountWithPercent = (amount / 100) * percent + amount; //задолженность с учётом процента
         int numberOfPayments = amountWithPercent / monthly; //общее кол-во платежей
         int year = 0;
 

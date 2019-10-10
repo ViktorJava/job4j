@@ -24,7 +24,7 @@ public class CheckPrimeNumberTest {
 
     //Тест, что число 4 составное число (непростое)
     @Test
-    public void When4() {
+    public void when4() {
         CheckPrimeNumber checkPrimeNumber = new CheckPrimeNumber();
         boolean rsl = checkPrimeNumber.check(4);
         assertThat(rsl, is(false));

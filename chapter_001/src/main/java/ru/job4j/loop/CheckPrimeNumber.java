@@ -22,9 +22,8 @@ public class CheckPrimeNumber {
             result = false;
         }
         for (int i = 2; i < finish; i++) {
-            {
-                if (finish % i == 0) result = false;
-//                break;
+            if (finish % i == 0) {
+                result = false;
             }
         }
         return result;

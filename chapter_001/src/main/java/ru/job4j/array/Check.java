@@ -21,7 +21,9 @@ public class Check {
             if (data[0] != data[index]) {
                 result = false;
                 break;
-            } else result = true;
+            } else {
+                result = true;
+            }
         }
         return result;
     }

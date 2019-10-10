@@ -51,8 +51,9 @@ public class Triangle {
         double b = new Point().distnce(x2, y2, x3, y3);
         double c = new Point().distnce(x1, y1, x3, y3);
         double p = period(a, b, c);
-        if (exist(a, b, c))
+        if (exist(a, b, c)) {
             rsl = Math.sqrt(p * (p - a) * (p - b) * (p - c));
+        }
         return rsl;
     }
 }

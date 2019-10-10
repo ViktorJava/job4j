@@ -11,13 +11,23 @@ package ru.job4j.array;
  */
 public class Defragment {
 
+    /**
+     * метод удаления элемента со сдвигом
+     *
+     * @param array фрагментированный массив
+     * @return дефрагментированный массив
+     */
     public static String[] compress(String[] array) {
         for (int index = 0; index < array.length; index++) {
             String cell = array[index];
             if (cell == null) {
-//                комперссируем массив
+                int nextCell = index + 1;
+                while (array[index] == null && nextCell < array.length) {
+                    array[index] = array[nextCell];
+                    array[nextCell] = null;
+                    nextCell++;
+                }
             }
-            System.out.print(array[index] + " ");
         }
         return array;
     }
@@ -25,7 +35,6 @@ public class Defragment {
     public static void main(String[] args) {
         String[] input = {"I", null, "wanna", null, "be", null, "compressed"};
         String[] compressed = compress(input);
-        System.out.println();
         for (int index = 0; index < compressed.length; index++) {
             System.out.print(compressed[index] + " ");
         }

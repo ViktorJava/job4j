@@ -10,6 +10,7 @@
     <version>3.0</version>
     <url>http://job4j.ru/</url>
     <name>job4j</name>
+    <description>Прохождение курса job4j.ru</description>
 
 
     <!-- Комментарий -->
@@ -37,27 +38,30 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
-
+        <!-- плагин который запускает тесты и генерирует отчёты по результатам их выполнения. -->
         <dependency>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-surefire-plugin</artifactId>
             <version>3.0.0-M3</version>
             <type>maven-plugin</type>
         </dependency>
-
     </dependencies>
-
     <build>
         <plugins>
-
-            <!-- плагин javadoc -->
+            <!--
+            Плагин maven-javadoc-plugin предназначен для того чтобы генерировать докуметацию по исходному коду
+            проекта стандартной утилитой javadoc.
+            -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.0.0</version>
+                <version>3.1.1</version>
+                <configuration>
+                    <show>private</show>
+                    <nohelp>true</nohelp>
+                </configuration>
             </plugin>
-
-            <!-- плагин chekstyle -->
+            <!-- Плагин проверяет стиль и качество исходного кода. -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
@@ -81,7 +85,6 @@
                     </execution>
                 </executions>
             </plugin>
-
         </plugins>
     </build>
 

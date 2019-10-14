@@ -22,9 +22,9 @@ Project is created with:
 * Ipsum version: 2.33
 * Ament library version: 999
 
-|GitHub|JUnit |Maven |Java |
-|------|------|------|-----|
-|![Algorithm schema](./images/github.png) |![Algorithm schema](./images/junit.png)|![Algorithm schema](./images/maven.png)|  ![Algorithm schema](./images/java.png)   
+|GitHub|JUnit |Maven |Java |Checkstyle |
+|------|------|------|-----|-----|
+|![Algorithm schema](./images/github.png) |![Algorithm schema](./images/junit.png)|![Algorithm schema](./images/maven.png)|  ![Algorithm schema](./images/java.png)|  ![Algorithm schema](./images/checkstyle.png)   
 	
 ## Setup
 To run this project, install it locally using npm:

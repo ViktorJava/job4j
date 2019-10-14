@@ -1,5 +1,5 @@
 /**
- * Package for array task (задачи c массивами)
+ * 7.Массивы.[#173368] Задачи c массивами.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
  * @version 0.1

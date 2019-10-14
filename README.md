@@ -1,7 +1,18 @@
 # Репозиторий Вдовиченко Виктора
-В настоящее время, прохожу стажировку  на курсе  Java разработчика - `Job4j.ru` 
+В настоящее время, прохожу стажировку на курсе Java разработчика - `Job4j.ru` 
+
+Ниже будут находиться наиболее интересные проекты, которые я буду реализовывать в дальнейшем.
 
 ## Содержание
+Java-разработчик
+Задания выполненные в процессе прохождения курса https://github.com/MishaVyuzh/job4j
+Введение в Java технологию
+Установка и настройка инструмента сборки проектов Maven. Жизненный цикл проекта и основные его фазы (clean, validate, compile, test, install). Файл конфигурации pom.xml.
+Проверка стиля оформления кода системой Checkstyle.
+Основные синтаксические элементы языка Java (идентификаторы, типы данных, преобразования типов, операторы).
+Введение в работу с системой контроля версий Git. Регистрация аккаунта и получение SSH ключа.
+Модульное тестирование. Применение пакетов JUnit, Hamcrest.
+Работа со средой разработки Intellij Idea.
 * [General info](#general-info)
 * [Technologies](#Technologies)
 * [Setup](#setup)
@@ -42,6 +53,6 @@ MIT
 
 ---
 
-> [amitmerchant.com](https://www.amitmerchant.com) &nbsp;&middot;&nbsp;
-> GitHub [@amitmerchant1990](https://github.com/amitmerchant1990) &nbsp;&middot;&nbsp;
-> Twitter [@amit_merchant](https://twitter.com/amit_merchant)
+> [Facebook.com](https://www.facebook.com/viktor.vdovichenko) &nbsp;&middot;&nbsp;
+> GitHub [@ViktorJava](https://github.com/ViktorJava) &nbsp;&middot;&nbsp;
+> OK [Odnoklassniki](https://ok.ru/profile/571539586668)

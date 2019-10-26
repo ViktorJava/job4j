@@ -7,12 +7,18 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
 /**
+ * Класс тестов,метода merge()
+ *
  * @author ViktorJava (gipsyscrew@gmail.com)
  * @version 0.1
  * @since 16.10.2019
  */
 //@Ignore
 public class MergeTest {
+    /**
+     * тест в случае двух нулевых массивов
+     * ожидание: нулевой массив
+     */
     @Test
     public void whenBothEmpty() {
         Merge algo = new Merge();

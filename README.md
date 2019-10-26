@@ -1,11 +1,15 @@
 # Репозиторий Вдовиченко Виктора
-В настоящее время, прохожу стажировку на курсе Java разработчика - `Job4j.ru` 
-
-Ниже будут находиться наиболее интересные проекты, которые я буду реализовывать в дальнейшем.
+>Начал стажировку на курсе Java разработчика http://job4j.ru 
+Ниже перечислены проекты, реализованые мной во время стажировки. 
+Проекты будут добавляться по мере реализации.
+>
+![Info](./images/intro.jpg)
 
 ## Содержание
+[chapter_001](https://github.com/ViktorJava/job4j/tree/master/chapter_001) - Базовый синтаксис языка: Типы данных, операторы условия, циклы, массивы.
+ 
 Java-разработчик
-Задания выполненные в процессе прохождения курса https://github.com/MishaVyuzh/job4j
+Задания выполненные в процессе прохождения курса
 Введение в Java технологию
 Установка и настройка инструмента сборки проектов Maven. Жизненный цикл проекта и основные его фазы (clean, validate, compile, test, install). Файл конфигурации pom.xml.
 Проверка стиля оформления кода системой Checkstyle.
@@ -46,6 +50,9 @@ $ npm install
 $ npm start
 ```
 
+## Спонсорская поддержка
+[![][liberapay img]][liberapay]
+
 ## [Лицензия](https://github.com/ViktorJava/job4j/tree/master/LICENSE)
 MIT
 
@@ -56,3 +63,6 @@ MIT
 > [Facebook.com](https://www.facebook.com/viktor.vdovichenko) &nbsp;&middot;&nbsp;
 > GitHub [@ViktorJava](https://github.com/ViktorJava) &nbsp;&middot;&nbsp;
 > OK [Odnoklassniki](https://ok.ru/profile/571539586668)
+
+[liberapay]:https://liberapay.com/ViktorJava/donate
+[liberapay img]:https://liberapay.com/assets/widgets/donate.svg

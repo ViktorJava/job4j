@@ -12,18 +12,34 @@ import java.util.Arrays;
  */
 public class Merge {
     /**
-     * Метод объеденяет данные из двух отсортированных массивов и помещает в третий массив
+     * метод объеденяет данные из двух отсортированных массивов и помещает в третий массив
      *
      * @param left  первый отсортированный массив
      * @param right второй отсортированный массив
-     * @return третий отсортированный массив из первого и второго массивов
+     * @return третий отсортированный массив состоит из первого и второго массивов
      */
     public int[] merge(int[] left, int[] right) {
         int[] rsl = new int[left.length + right.length];
-
+        int i = 0;
+        int j = 0;
+        int rslIndex = 0;
+        while (i + j != rsl.length) {
+            if (i != left.length && j != right.length) {
+                rsl[rslIndex++] = left[i] < right[j] ? left[i++] : right[j++];
+            } else if (i != left.length) {
+                rsl[rslIndex++] = left[i++];
+            } else {
+                rsl[rslIndex++] = right[j++];
+            }
+        }
         return rsl;
     }
 
+    /**
+     * метод-точка входа в класс Merge()
+     *
+     * @param args аргументы передаваемые из консоли
+     */
     public static void main(String[] args) {
         Merge process = new Merge();
         int[] rsl = process.merge(new int[]{1, 3, 5}, new int[]{2, 4});

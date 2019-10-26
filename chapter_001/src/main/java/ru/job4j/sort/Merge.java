@@ -26,10 +26,10 @@ public class Merge {
         while (i + j != rsl.length) {
             if (i != left.length && j != right.length) {
                 rsl[rslIndex++] = left[i] < right[j] ? left[i++] : right[j++];
-            } else if (i != left.length) {
-                rsl[rslIndex++] = left[i++];
-            } else {
-                rsl[rslIndex++] = right[j++];
+            } else if (i != left.length) {    // Эти проверки можно выполнит через тернарный оператор
+                rsl[rslIndex++] = left[i++];  // нет времени думать над этой реализацией.
+            } else {                          //пора сдавать задание
+                rsl[rslIndex++] = right[j++]; //
             }
         }
         return rsl;

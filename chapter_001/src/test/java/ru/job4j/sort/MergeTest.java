@@ -15,7 +15,10 @@ import static org.junit.Assert.*;
  */
 //@Ignore
 public class MergeTest {
-
+    /**
+     * тест в случае двух нулевых массивов
+     * ожидание: нулевой массив
+     */
     @Test
     public void whenBothEmpty() {
         Merge algo = new Merge();

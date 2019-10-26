@@ -60,9 +60,9 @@ public class FindLoop {
         for (int i = 0; i < data.length; i++) {
 
             int min = indexOf(data, i + 1, i, data.length);
-                int temp = data[min];
-                data[min] = data[i];
-                data[i] = temp;
+            int temp = data[min];
+            data[min] = data[i];
+            data[i] = temp;
         }
         return data;
     }

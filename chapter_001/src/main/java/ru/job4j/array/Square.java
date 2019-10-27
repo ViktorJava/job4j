@@ -1,14 +1,13 @@
 package ru.job4j.array;
 
 /**
- * ТЗ [#173369]: 6.0. Заполнить массив степенями чисел.
+ * ТЗ [#173369]:заполнить массив степенями чисел.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
  * @version 0.1
  * @since 06.09.2019
  */
 public class Square {
-
     /**
      * Метод возведения в квадрат
      *

@@ -20,16 +20,16 @@ public class Merge {
      */
     public int[] merge(int[] left, int[] right) {
         int[] rsl = new int[left.length + right.length];
-        int i = 0;
-        int j = 0;
+        int counter1 = 0;
+        int counter2 = 0;
         int rslIndex = 0;
-        while (i + j != rsl.length) {
-            if (i != left.length && j != right.length) {
-                rsl[rslIndex++] = left[i] < right[j] ? left[i++] : right[j++];
-            } else if (i != left.length) {    // Эти проверки можно выполнит через тернарный оператор
-                rsl[rslIndex++] = left[i++];  // нет времени думать над этой реализацией.
-            } else {                          //пора сдавать задание
-                rsl[rslIndex++] = right[j++]; //
+        while (counter1 + counter2 != rsl.length) {
+            if (counter1 != left.length && counter2 != right.length) {
+                rsl[rslIndex++] = left[counter1] < right[counter2] ? left[counter1++] : right[counter2++];
+            } else if (counter1 != left.length) {
+                rsl[rslIndex++] = left[counter1++];
+            } else {
+                rsl[rslIndex++] = right[counter2++];
             }
         }
         return rsl;

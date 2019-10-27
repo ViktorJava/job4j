@@ -1,7 +1,7 @@
 package ru.job4j.array;
 
 /**
- * ТЗ [#173373]: 6.3. Массив заполнен true или false
+ * ТЗ [#173373]:массив заполнен true или false
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
  * @version 0.1
@@ -10,7 +10,7 @@ package ru.job4j.array;
 public class Check {
 
     /**
-     * Метод должен проверить, что все элементы в массиве являются или true или false
+     * Метод проверяет,что все элементы в массиве являются или true или false.
      *
      * @param data массив данных
      * @return true/false

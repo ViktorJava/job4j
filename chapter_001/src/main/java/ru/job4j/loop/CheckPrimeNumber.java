@@ -1,7 +1,7 @@
 package ru.job4j.loop;
 
 /**
- * ТЗ [#173367]: 5.5. Простое число.
+ * ТЗ [#173367]:Простое число.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
  * @version 0.1
@@ -10,7 +10,7 @@ package ru.job4j.loop;
 public class CheckPrimeNumber {
 
     /**
-     * Метод check(int finish) проверяет, что число является простым
+     * Метод проверяет, что число является простым
      * (делится только на себя и на единицу)
      *
      * @param finish проверяемое число на простоту

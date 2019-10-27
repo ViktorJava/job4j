@@ -1,7 +1,7 @@
 package ru.job4j.array;
 
 /**
- * ТЗ [#173374]: 6.7. Игровое поле представляет из себя массив заполненный символами '_'(подчеркивание)
+ * ТЗ [#173374]:игровое поле представляет из себя массив заполненный символами '_'(подчеркивание)
  * и 'X' - крестик. Цель игры расположить крестики в линию на 5 элементов.
  * Линия может быть горизонтальная или вертикальная. Задачей будет написать метод, который будет проверять,
  * что на поле находится выигрышная ситуация.
@@ -11,30 +11,29 @@ package ru.job4j.array;
  * @since 26.09.2019
  */
 public class MatrixCheck {
-
     /**
      * Метод должен проверить, что в квадратном массиве
      * есть строчки или столбцы заполненные только символом 'X'
-     * Массив всегда квадратный 5 на 5 элементов
+     * Массив всегда квадратный 5 на 5 элементов.
      *
      * @param board массив данных описывающий доску
-     * @return результат проверки (наличие вертикальных или горизонтальных строк 'Х')
+     * @return true/false наличие вертикальных или горизонтальных строк 'Х'
      */
     public static boolean isWin(char[][] board) {
         boolean result = false;
-        int horizontalCells = 0;
-        int verticalCells = 0;
+        int horizontal = 0;
+        int vertical = 0;
         for (int row = 0; row < board.length; row++) {
             if (board[row][row] == 'X') {
                 for (int cell = 0; cell < board.length; cell++) {
                     if (board[row][cell] == 'X') {
-                        horizontalCells++;
+                        horizontal++;
                     }
                     if (board[cell][row] == 'X') {
-                        verticalCells++;
+                        vertical++;
                     }
                 }
-                if (verticalCells == board.length || horizontalCells == board.length) {
+                if (vertical == board.length || horizontal == board.length) {
                     result = true;
                     break;
                 }

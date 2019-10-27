@@ -1,7 +1,7 @@
 package ru.job4j.array;
 
 /**
- * ТЗ[#173372]:6.4.Слово начинается с...
+ * ТЗ[#173372]:слово начинается с...
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
  * @version 0.1

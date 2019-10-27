@@ -1,7 +1,7 @@
 package ru.job4j.array;
 
 /**
- * ТЗ [#173371]: 6.6. Двухмерный массив. Таблица умножения.
+ * ТЗ [#173371]:двухмерный массив.Таблица умножения.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
  * @version 0.1
@@ -17,7 +17,6 @@ public class Matrix {
      */
     public int[][] multiple(int size) {
         int[][] table = new int[size][size];
-
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
                 table[j][i] = (j + 1) * (i + 1);

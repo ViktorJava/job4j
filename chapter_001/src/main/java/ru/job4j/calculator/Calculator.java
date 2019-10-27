@@ -1,7 +1,7 @@
 package ru.job4j.calculator;
+
 /**
- * Калькулятор. Выполняет простые арифметические действия над
- * числами с плавающей запятой
+ * Калькулятор выполняет простые арифметические действия над числами с плавающей запятой
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
  * @version 0.1
@@ -11,7 +11,7 @@ public class Calculator {
     /**
      * Сложение двух числе и вывод суммы на консоль
      *
-     * @param first первое слагаемое
+     * @param first  первое слагаемое
      * @param second второе слагаемое
      */
     public static void add(double first, double second) {
@@ -22,7 +22,7 @@ public class Calculator {
     /**
      * Деление двух числе и вывод частного на консоль
      *
-     * @param first делимое
+     * @param first  делимое
      * @param second делитель
      */
     public static void div(double first, double second) {
@@ -33,7 +33,7 @@ public class Calculator {
     /**
      * Умножение двух числе и вывод произведения на консоль
      *
-     * @param first первый множитель
+     * @param first  первый множитель
      * @param second второй множитель
      */
     public static void multiply(double first, double second) {
@@ -44,7 +44,7 @@ public class Calculator {
     /**
      * Вычитание двух числе и вывод разности на консоль
      *
-     * @param first уменьшаемое
+     * @param first  уменьшаемое
      * @param second вычитаемое
      */
     public static void subtrack(double first, double second) {

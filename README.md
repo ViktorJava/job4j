@@ -3,25 +3,27 @@
 Ниже перечислены проекты, реализованые мной во время стажировки. 
 Проекты будут добавляться по мере реализации.
 >
-![Info](./images/intro.jpg)
-
+ [Главная информация](#Главная-информация)<p>
+ [Технологии](#Технологии)<p>
+ [Установка](#Установка)
+ 
 ## Содержание
 [chapter_001](https://github.com/ViktorJava/job4j/tree/master/chapter_001) - Базовый синтаксис языка: Типы данных, операторы условия, циклы, массивы.
  
-Java-разработчик
-Задания выполненные в процессе прохождения курса
-Введение в Java технологию
-Установка и настройка инструмента сборки проектов Maven. Жизненный цикл проекта и основные его фазы (clean, validate, compile, test, install). Файл конфигурации pom.xml.
-Проверка стиля оформления кода системой Checkstyle.
-Основные синтаксические элементы языка Java (идентификаторы, типы данных, преобразования типов, операторы).
-Введение в работу с системой контроля версий Git. Регистрация аккаунта и получение SSH ключа.
-Модульное тестирование. Применение пакетов JUnit, Hamcrest.
-Работа со средой разработки Intellij Idea.
-* [General info](#general-info)
-* [Technologies](#Technologies)
-* [Setup](#setup)
+**Задания выполненные в процессе прохождения блока:**
 
-## General info
+* Введение в Java технологию.
+* Основные синтаксические элементы языка Java (идентификаторы, типы данных, преобразования типов, операторы).
+* Работа со средой разработки Intellij Idea.
+* Установка и настройка инструмента сборки проектов Maven.
+* Жизненный цикл проекта и основные его фазы (clean, validate, compile, test, install). 
+Файл конфигурации pom.xml.
+* Проверка стиля оформления кода системой Checkstyle.
+* Введение в работу с системой контроля версий Git. Регистрация аккаунта и получение SSH ключа.
+* Модульное тестирование. Применение пакетов JUnit, Hamcrest.
+
+
+## Главная информация
 <table>
 <tr>
 <td>
@@ -31,23 +33,19 @@ This project is simple Lorem ipsum dolor generator.
 </table>
 
 	
-## Technologies
-Project is created with:
-* Lorem version: 12.3
-* Ipsum version: 2.33
-* Ament library version: 999
+## Технологии
+Проект создан с:
 
 |GitHub|JUnit |Maven |Java |Checkstyle |
 |------|------|------|-----|-----|
 |![Algorithm schema](./images/github.png) |![Algorithm schema](./images/junit.png)|![Algorithm schema](./images/maven.png)|  ![Algorithm schema](./images/java.png)|  ![Algorithm schema](./images/checkstyle.png)   
 	
-## Setup
-To run this project, install it locally using npm:
+## Установка
+To run this project, install it locally using Maven:
 
 ```
-$ cd ../lorem
-$ npm install
-$ npm start
+$ git ../lorem
+$ mvn  install
 ```
 
 ## Спонсорская поддержка

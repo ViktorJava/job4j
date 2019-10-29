@@ -54,6 +54,7 @@ public class Calculator {
 
     /**
      * Точка входа в класс
+     * @param args аргументы передаваемые в класс
      */
     public static void main(String[] args) {
         add(1, 1);

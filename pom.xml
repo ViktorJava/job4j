@@ -78,7 +78,7 @@
                             <consoleOutput>true</consoleOutput>
                             <failsOnError>true</failsOnError>
                             <!-- исключение файла из проверки -->
-                            <excludes>**/module-info.java</excludes>
+                            <!-- <excludes>**/module-info.java</excludes> -->
                             <includeTestSourceDirectory>true</includeTestSourceDirectory>
                         </configuration>
                         <goals>
@@ -91,3 +91,4 @@
     </build>
 
 </project>
+

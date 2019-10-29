@@ -1,4 +1,4 @@
-package tracker;
+package ru.job4j.tracker;
 
 /**
  * @author ViktorJava (gipsyscrew@gmail.com)

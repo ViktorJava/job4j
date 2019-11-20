@@ -24,6 +24,7 @@ public class TriangleTest {
         //задаём ожидаемый результат
         double expected = 6D;
         //проверяем результат и ожидаемое значение
-        assertThat(result, is(expected));
+//        assertThat(result, is(expected));
+        assertEquals(result, expected, 0.01);
     }
 }

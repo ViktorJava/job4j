@@ -4,6 +4,9 @@ import java.util.Arrays;
 import java.util.Random;
 
 /**
+ * Класс реализации методов для работы с обьектами типа Item.
+ * Данный класс используется, как хранилище для заявок.
+ *
  * @author ViktorJava (gipsyscrew@gmail.com)
  * @version 0.1
  * @since 27.10.2019
@@ -32,8 +35,8 @@ public class Tracker {
 
     /**
      * Метод генерирует уникальный ключ для заявки.
-     * Так-как у заявки нет уникальноси полей, имени и описание.
-     * Для идентификации, нам нужен уникальный ключ
+     * Так-как у заявки нет уникальных полей, для идентификации заявки,
+     * будем создавать уникальный ключ id.
      *
      * @return Уникальный ключ
      */
@@ -56,7 +59,7 @@ public class Tracker {
          * Одна причина использования id.equals("") или id.length() == 0 но не id.isEmpty() заключается в том,
          * что метод id.isEmpty() был введен в Java 1.6. (короче говоря, совместимость и всё такое)
          */
-        if (this.position > 0 && id.length() == 0 && item != null) {
+        if (this.position > 0 && id.length() != 0 && item != null) {
             int index = 0;
             while (index < this.position) {
                 if (items[index].getId().equals(id)) {
@@ -80,6 +83,14 @@ public class Tracker {
      */
     public boolean delete(String id) {
         boolean result = false;
+        for (int index = 0; index < this.position; index++) {
+            if (items[index].getId().equals(id)) {
+                System.arraycopy(items, index + 1, items, index, items.length - index - 1);
+                position--;
+                result = true;
+                break;
+            }
+        }
         return result;
     }
 
@@ -103,13 +114,11 @@ public class Tracker {
      */
     public Item[] findByName(String key) {
         Item[] result = new Item[this.position];
-        int index = 0;
-        while (index < this.position) {
+        for (int index = 0; index < this.position; index++) {
             if (items[index].getName().equals(key)) {
                 result[index] = this.items[index];
                 break;
             }
-            index++;
         }
         return result;
     }
@@ -123,7 +132,11 @@ public class Tracker {
      */
     public Item findById(String id) {
         Item result = null;
-
+        for (Item item : items) {
+            if (item != null && item.getId().equals(id)) {
+                result = item;
+            }
+        }
         return result;
     }
 }

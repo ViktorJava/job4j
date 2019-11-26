@@ -57,7 +57,8 @@ public class TrackerTest {
         tracker.add(test1);
         tracker.add(test2);
         assertThat(tracker.delete(test1.getId()), is(true));
-        assertThat(tracker.findAll()[0], is(test2));
+        Item[] expected = {test2};
+        assertThat(tracker.findAll(), is(expected));
     }
 
     /**
@@ -72,7 +73,8 @@ public class TrackerTest {
         tracker.add(test1);
         tracker.add(test2);
         tracker.add(test3);
-        assertThat(tracker.findByName(test2.getName())[1], is(test2));
+        Item[] expected = {test3};
+        assertThat(tracker.findByName(test3.getName()), is(expected));
     }
 
     /**

@@ -20,7 +20,7 @@ import java.util.Scanner;
 public class MagicBall {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int answer = new Random().nextInt(3);//генерация от нуля до двух
+        int answer = new Random().nextInt(3); //генерация от нуля до двух
 
         System.out.print("Я великий Оракул, твою мать, что ты хочешь узнать? ");
         String question = scanner.nextLine();

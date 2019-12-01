@@ -21,38 +21,58 @@ public class StartUI {
             int select = Integer.valueOf(scanner.nextLine());
             if (select == 0) {
                 System.out.println("=== Create a new Item ===");
-                System.out.println("Enter name: ");
+                System.out.print("Enter name: ");
                 String name = scanner.nextLine();
                 Item item = new Item(name);
                 tracker.add(item);
+                System.out.println("=== New item ===");
+                System.out.println("name: " + item.getName() + "id: " + item.getId());
             } else if (select == 1) {
-                System.out.println("--- All items ---");
-                tracker.findAll();
+                System.out.println("=== All items ===");
+                for (Item item : tracker.findAll()) {
+                    System.out.println("Name: " + item.getName() + " id: " + item.getId());
+                }
             } else if (select == 2) {
-                System.out.println("--- Edit item ---");
-                System.out.print("Enter name: ");
+                System.out.println("=== Edit item ===");
+                System.out.print("Enter new name: ");
                 String name = scanner.nextLine();
-                System.out.print("Enter Id: ");
+                System.out.print("Enter old id: ");
                 String id = scanner.nextLine();
                 Item item = new Item(name);
-                tracker.replace(id, item);
+                if (tracker.replace(id, item)) {
+                    System.out.println("[OK] Task changed");
+                    System.out.println("Name: " + item.getName() + " id: " + item.getId());
+                } else {
+                    System.out.println("[Error] Task not found");
+                }
             } else if (select == 3) {
-                System.out.println("--- Delete item ---");
-                System.out.print("Enter item Id: ");
+                System.out.println("=== Delete item ===");
+                System.out.print("Enter item id: ");
                 String id = scanner.nextLine();
-                tracker.delete(id);
+                if (tracker.delete(id)) {
+                    System.out.println("[OK] Task deleted");
+                } else {
+                    System.out.println("[Error] Task not found");
+                }
             } else if (select == 4) {
-                System.out.println("--- Find item by Id ---");
-                System.out.print("Enter item Id: ");
+                System.out.println("=== Find item by Id ===");
+                System.out.print("Enter item id: ");
                 String id = scanner.nextLine();
-                tracker.findById(id);
+                Item item = tracker.findById(id);
+                if (item != null) {
+                    System.out.println("name: " + item.getName() + "id: " + item.getId());
+                } else {
+                    System.out.println("Task not found");
+                }
             } else if (select == 5) {
-                System.out.println("--- Find item by name ---");
+                System.out.println("=== Find item by name ===");
                 System.out.print("Enter item name: ");
                 String name = scanner.nextLine();
-                tracker.findByName(name);
+                for (Item item : tracker.findByName(name)) {
+                    System.out.println("Name: " + item.getName() + " id: " + item.getId());
+                }
             } else if (select == 6) {
-                System.out.println("--- Exit program ---");
+                System.out.println("=== Exit program ===");
                 run = false;
             }
         }

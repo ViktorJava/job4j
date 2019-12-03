@@ -113,14 +113,14 @@ public class Tracker {
      * @return массив классов.
      */
     public Item[] findByName(String key) {
+        int c = 0;
         Item[] result = new Item[this.position];
         for (int index = 0; index < this.position; index++) {
             if (items[index].getName().equals(key)) {
-                result[index] = this.items[index];
-                break;
+                result[c++] = this.items[index];
             }
         }
-        return result;
+        return Arrays.copyOf(result, c);
     }
 
     /**
@@ -132,9 +132,9 @@ public class Tracker {
      */
     public Item findById(String id) {
         Item result = null;
-        for (Item item : items) {
-            if (item != null && item.getId().equals(id)) {
-                result = item;
+        for (int i = 0; i < this.position; i++) {
+            if (items[i].getId().equals(id)) {
+                result = items[i];
             }
         }
         return result;

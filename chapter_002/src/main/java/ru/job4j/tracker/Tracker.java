@@ -42,7 +42,7 @@ public class Tracker {
      */
     private String generateId() {
         Random rm = new Random();
-        return String.valueOf(rm.nextLong() + System.currentTimeMillis());
+        return String.valueOf(Math.abs(rm.nextLong() + System.currentTimeMillis()));
     }
 
     /**
@@ -113,14 +113,14 @@ public class Tracker {
      * @return массив классов.
      */
     public Item[] findByName(String key) {
-        int c = 0;
+        int count = 0;
         Item[] result = new Item[this.position];
         for (int index = 0; index < this.position; index++) {
             if (items[index].getName().equals(key)) {
-                result[c++] = this.items[index];
+                result[count++] = this.items[index];
             }
         }
-        return Arrays.copyOf(result, c);
+        return Arrays.copyOf(result, count);
     }
 
     /**
@@ -132,9 +132,9 @@ public class Tracker {
      */
     public Item findById(String id) {
         Item result = null;
-        for (int i = 0; i < this.position; i++) {
-            if (items[i].getId().equals(id)) {
-                result = items[i];
+        for (int index = 0; index < this.position; index++) {
+            if (items[index].getId().equals(id)) {
+                result = items[index];
             }
         }
         return result;

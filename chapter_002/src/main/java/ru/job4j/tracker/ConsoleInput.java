@@ -3,6 +3,8 @@ package ru.job4j.tracker;
 import java.util.Scanner;
 
 /**
+ * Реализация интерфейса. Выполняется опрос клавиатуры.
+ *
  * @author ViktorJava (gipsyscrew@gmail.com)
  * @version 0.1
  * @since 02.12.2019
@@ -10,6 +12,13 @@ import java.util.Scanner;
 public class ConsoleInput implements Input {
     private Scanner scanner = new Scanner(System.in);
 
+    /**
+     * Реализация опроса клавиатуры и ввода данных от пользователя.
+     * Возвращает введённую строку от пользователя.
+     *
+     * @param question запрос данных
+     * @return полученные данные
+     */
     @Override
     public String askStr(String question) {
         System.out.print(question);
@@ -18,6 +27,6 @@ public class ConsoleInput implements Input {
 
     @Override
     public int askInt(String question) {
-        return Integer.valueOf(askStr(question));
+        return Integer.parseInt(askStr(question));
     }
 }

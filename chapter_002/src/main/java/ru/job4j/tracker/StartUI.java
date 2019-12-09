@@ -14,12 +14,11 @@ package ru.job4j.tracker;
  */
 public class StartUI {
 
-    private void init(Input input, Tracker tracker) {
+    public void init(Input input, Tracker tracker) {
         boolean run = true;
         while (run) {
             this.showMenu();
-            System.out.print("Select: ");
-            int select = Integer.parseInt(input.askStr(""));
+            int select = Integer.parseInt(input.askStr("Select: "));
             if (select == 0) {
                 StartUI.createItem(input, tracker);
             } else if (select == 1) {
@@ -39,7 +38,7 @@ public class StartUI {
         }
     }
 
-    private static void findItemName(Input input, Tracker tracker) {
+    public static void findItemName(Input input, Tracker tracker) {
         System.out.println("=== Find item by name ===");
         String name = input.askStr("Enter item name: ");
         for (Item item : tracker.findByName(name)) {
@@ -47,18 +46,18 @@ public class StartUI {
         }
     }
 
-    private static void findItemId(Input input, Tracker tracker) {
+    public static void findItemId(Input input, Tracker tracker) {
         System.out.println("=== Find item by Id ===");
         String id = input.askStr("Enter item id: ");
         Item item = tracker.findById(id);
         if (item != null) {
-            System.out.println("name: " + item.getName() + "id: " + item.getId());
+            System.out.println("name: " + item.getName() + " id: " + item.getId());
         } else {
             System.out.println("Task not found");
         }
     }
 
-    private static void deleteItem(Input input, Tracker tracker) {
+    public static void deleteItem(Input input, Tracker tracker) {
         System.out.println("=== Delete item ===");
         String id = input.askStr("Enter item id: ");
         if (tracker.delete(id)) {
@@ -68,10 +67,10 @@ public class StartUI {
         }
     }
 
-    private static void replaceItem(Input input, Tracker tracker) {
+    public static void replaceItem(Input input, Tracker tracker) {
         System.out.println("=== Edit item ===");
-        String name = input.askStr("Enter new name: ");
         String id = input.askStr("Enter old id: ");
+        String name = input.askStr("Enter new name: ");
         Item item = new Item(name);
         if (tracker.replace(id, item)) {
             System.out.println("[OK] Task changed");
@@ -81,23 +80,23 @@ public class StartUI {
         }
     }
 
-    private static void viewItems(Tracker tracker) {
+    public static void viewItems(Tracker tracker) {
         System.out.println("=== All items ===");
         for (Item item : tracker.findAll()) {
             System.out.println("Name: " + item.getName() + " id: " + item.getId());
         }
     }
 
-    private static void createItem(Input input, Tracker tracker) {
+    public static void createItem(Input input, Tracker tracker) {
         System.out.println("=== Create a new Item ===");
         String select = input.askStr("Enter name: ");
         Item item = new Item(select);
         tracker.add(item);
         System.out.println("=== New item ===");
-        System.out.println("name: " + item.getName() + "id: " + item.getId());
+        System.out.println("name: " + item.getName() + " id: " + item.getId());
     }
 
-    private void showMenu() {
+    public static void showMenu() {
         System.out.println("=== Menu ===");
         System.out.println("0. Add new Item");
         System.out.println("1. Show all items");
@@ -111,7 +110,7 @@ public class StartUI {
     public static void main(String[] args) {
         Input input = new ConsoleInput();
         Tracker tracker = new Tracker();
-//         создаём объект на который не имеем ссылки,
+//         создаём объект на который не сохраняем ссылку в переменной,
 //         это используется, когда объект одноразовый.
         new StartUI().init(input, tracker);
     }

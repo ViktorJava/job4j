@@ -12,13 +12,12 @@
     <name>job4j</name>
     <description>Прохождение курса job4j.ru</description>
 
-
     <!-- Комментарий -->
     <modules>
         <module>chapter_001</module>
         <module>chapter_002</module>
     </modules>
-    
+
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
@@ -26,7 +25,6 @@
     </properties>
 
     <dependencies>
-
         <dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-all</artifactId>
@@ -40,29 +38,9 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
-        <!-- плагин который запускает тесты и генерирует отчёты по результатам их выполнения. -->
-        <dependency>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <version>3.0.0-M3</version>
-            <type>maven-plugin</type>
-        </dependency>
     </dependencies>
     <build>
         <plugins>
-            <!--
-            Плагин maven-javadoc-plugin предназначен для того чтобы генерировать докуметацию по исходному коду
-            проекта стандартной утилитой javadoc.
-            -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.1.1</version>
-                <configuration>
-                    <show>private</show>
-                    <nohelp>true</nohelp>
-                </configuration>
-            </plugin>
             <!-- Плагин проверяет стиль и качество исходного кода. -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -77,8 +55,6 @@
                             <encoding>UTF-8</encoding>
                             <consoleOutput>true</consoleOutput>
                             <failsOnError>true</failsOnError>
-                            <!-- исключение файла из проверки -->
-                            <!-- <excludes>**/module-info.java</excludes> -->
                             <includeTestSourceDirectory>true</includeTestSourceDirectory>
                         </configuration>
                         <goals>
@@ -89,6 +65,5 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
 

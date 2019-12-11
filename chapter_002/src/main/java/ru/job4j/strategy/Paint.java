@@ -16,7 +16,7 @@ public class Paint {
         draw(new Triangle());
         draw(new Square());
     }
-    private static void draw(Shape shape) {
+    public static void draw(Shape shape) {
         System.out.println(shape.draw());
     }
 }

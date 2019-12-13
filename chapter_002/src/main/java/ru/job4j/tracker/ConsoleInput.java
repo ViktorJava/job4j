@@ -3,7 +3,8 @@ package ru.job4j.tracker;
 import java.util.Scanner;
 
 /**
- * Реализация интерфейса. Выполняется опрос клавиатуры.
+ * Реализация интерфейса.
+ * Выполняется опрос клавиатуры.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
  * @version 0.1

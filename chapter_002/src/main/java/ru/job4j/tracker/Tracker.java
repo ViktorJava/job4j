@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 /**
- * Класс реализации методов для работы с обьектами типа Item.
+ * Класс-обёртка, реализации методов, для работы с объектами типа Item.
  * Данный класс используется, как хранилище для заявок.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)

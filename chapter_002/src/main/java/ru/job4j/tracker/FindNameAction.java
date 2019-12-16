@@ -1,7 +1,7 @@
 package ru.job4j.tracker;
 
 /**
- * Поиск пункта по имени.
+ * Класс реализации поиска записи по имени.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
  * @version 0.1
@@ -13,6 +13,13 @@ public class FindNameAction implements UserAction {
         return "Find items by name";
     }
 
+    /**
+     * Поиск записи по имени.
+     *
+     * @param input   объект пользовательского ввода
+     * @param tracker объект доступа к классу Tracker
+     * @return флаг выхода.
+     */
     @Override
     public boolean execute(Input input, Tracker tracker) {
         System.out.println("\n--- Find items by name ---");

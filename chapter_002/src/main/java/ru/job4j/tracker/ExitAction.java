@@ -1,7 +1,7 @@
 package ru.job4j.tracker;
 
 /**
- * Выход из программы.
+ * Класс реализации выхода из программы.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
  * @version 0.1
@@ -13,6 +13,13 @@ public class ExitAction implements UserAction {
         return "Exit";
     }
 
+    /**
+     * Выход из программы
+     *
+     * @param input   объект пользовательского ввода
+     * @param tracker объект доступа к классу Tracker
+     * @return флаг выхода.
+     */
     @Override
     public boolean execute(Input input, Tracker tracker) {
         System.out.println("Exit the Program");

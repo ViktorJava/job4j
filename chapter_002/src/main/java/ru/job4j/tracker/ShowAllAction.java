@@ -1,7 +1,7 @@
 package ru.job4j.tracker;
 
 /**
- * Показать все пункты.
+ * Класс реализации отображения всех записей.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
  * @version 0.1
@@ -13,6 +13,13 @@ public class ShowAllAction implements UserAction {
         return "Show all items";
     }
 
+    /**
+     * Показать записи.
+     *
+     * @param input   объект пользовательского ввода
+     * @param tracker объект доступа к классу Tracker
+     * @return флаг выхода.
+     */
     @Override
     public boolean execute(Input input, Tracker tracker) {
         System.out.println("\n--- Show all items ---");

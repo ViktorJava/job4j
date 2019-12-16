@@ -1,7 +1,7 @@
 package ru.job4j.tracker;
 
 /**
- * Удаление пункта
+ * Класс реализации удаления записи.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
  * @version 0.1
@@ -13,6 +13,13 @@ public class DeleteAction implements UserAction {
         return "Delete item";
     }
 
+    /**
+     * Удаление записи.
+     *
+     * @param input   объект пользовательского ввода
+     * @param tracker объект доступа к классу Tracker
+     * @return флаг выхода.
+     */
     @Override
     public boolean execute(Input input, Tracker tracker) {
         System.out.println("\n--- Delete item ---");

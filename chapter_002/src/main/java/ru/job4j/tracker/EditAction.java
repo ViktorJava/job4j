@@ -1,7 +1,7 @@
 package ru.job4j.tracker;
 
 /**
- * Редактирование пункта.
+ * Класс реализации редактирования записи.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
  * @version 0.1
@@ -13,6 +13,13 @@ public class EditAction implements UserAction {
         return "Edit item";
     }
 
+    /**
+     * Редактирование записи.
+     *
+     * @param input   объект пользовательского ввода
+     * @param tracker объект доступа к классу Tracker
+     * @return флаг выхода.
+     */
     @Override
     public boolean execute(Input input, Tracker tracker) {
         System.out.println("\n--- Edit item ---");

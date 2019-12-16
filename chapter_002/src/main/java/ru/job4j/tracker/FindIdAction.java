@@ -1,7 +1,8 @@
 package ru.job4j.tracker;
 
 /**
- * Поиск пункта по индивидуальному идентификатору.
+ * Класс реализации поиска записи
+ * по индивидуальному идентификатору.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
  * @version 0.1
@@ -13,6 +14,13 @@ public class FindIdAction implements UserAction {
         return "Find item by Id";
     }
 
+    /**
+     * Поиск записи по ID.
+     *
+     * @param input   объект пользовательского ввода
+     * @param tracker объект доступа к классу Tracker
+     * @return флаг выхода.
+     */
     @Override
     public boolean execute(Input input, Tracker tracker) {
         System.out.println("\n--- Find item by Id ---");

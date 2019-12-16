@@ -2,8 +2,7 @@ package ru.job4j.tracker;
 
 /**
  * Класс-заглушка реализующий интерфейс Input
- * и предназначенный для тестирования
- * пользовательского, консольного ввода данных.
+ * и предназначенный для ввода знаний в наш тест.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
  * @version 0.1
@@ -14,8 +13,10 @@ public class StubInput implements Input {
     private int position = 0;
 
     /**
-     * Конструктор эмулирует ввод данных пользователем
-     * @param answers входящие денные
+     * Конструктор класса, который
+     * эмулирует ввод данных пользователем.
+     *
+     * @param answers входящие данные
      */
     public StubInput(String[] answers) {
         this.answers = answers;

@@ -22,10 +22,11 @@ public class ShowAllAction implements UserAction {
      */
     @Override
     public boolean execute(Input input, Tracker tracker) {
-        System.out.println("\n--- Show all items ---");
+        System.out.println();
+        System.out.println("--- Show all items ---");
         int count = 0;
         for (Item item : tracker.findAll()) {
-            System.out.println((count++) + ". [name]: " + item.getName() + " [id]: " + item.getId());
+            System.out.println(String.format("%d.[name]: %s [id]: %s", (count++), item.getName(), item.getId()));
         }
         System.out.println();
         return true;

@@ -22,13 +22,15 @@ public class FindNameAction implements UserAction {
      */
     @Override
     public boolean execute(Input input, Tracker tracker) {
-        System.out.println("\n--- Find items by name ---");
+        System.out.println();
+        System.out.println("--- Find items by name ---");
         String name = input.askStr("Enter item name: ");
         System.out.println("please wait...");
         for (Item item : tracker.findByName(name)) {
-            System.out.println("[name]: " + item.getName() + " [id]: " + item.getId());
+            System.out.println(String.format("[name]: %s [id]: %s", item.getName(), item.getId()));
         }
-        System.out.println("(Info) search over\n");
+        System.out.println("(Info) search over");
+        System.out.println();
         return true;
     }
 }

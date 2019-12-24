@@ -44,7 +44,8 @@ public class StartUI {
      * @param args аргументы запуска программы.
      */
     public static void main(String[] args) {
-        Input validate = new ValidateInput();
+        Input input = new ConsoleInput();
+        Input validate = new ValidateInput(input);
         Tracker tracker = new Tracker();
         //создаём массив действий
         UserAction[] actions = {

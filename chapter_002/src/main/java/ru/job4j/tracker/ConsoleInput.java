@@ -33,7 +33,7 @@ public class ConsoleInput implements Input {
      */
     @Override
     public int askInt(String question) {
-        return Integer.parseInt(askStr(question));
+        return Integer.parseInt(this.askStr(question));
     }
 
     /**
@@ -47,8 +47,8 @@ public class ConsoleInput implements Input {
      */
     @Override
     public int askInt(String question, int max) {
-        int select = askInt(question);
-        if (select > 0 && select < max) {
+        int select = this.askInt(question);
+        if (select >= 0 && select < max) {
             return select;
         } else {
             throw new IllegalStateException(String.format("Out of about %s > [0, %s]", select, max));

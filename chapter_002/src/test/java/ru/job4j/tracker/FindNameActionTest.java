@@ -29,7 +29,6 @@ public class FindNameActionTest {
         act.execute(new StubInput(new String[]{"fix bug"}), tracker);
         String expect = new StringJoiner(System.lineSeparator(), System.lineSeparator(), System.lineSeparator())
                 .add("--- Find items by name ---")
-                .add("Enter item name: ")
                 .add("please wait...")
                 .add("[name]: " + item.getName() + " [id]: " + item.getId())
                 .add("(Info) search over" + System.lineSeparator())

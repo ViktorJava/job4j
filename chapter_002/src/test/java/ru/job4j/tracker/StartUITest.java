@@ -30,7 +30,8 @@ public class StartUITest {
         new StartUI().init(input, new Tracker(), new UserAction[]{action});
         String expect = new StringJoiner(System.lineSeparator(), "", "")
                 .add("=== Menu ===")
-                .add("0. Stub Action" + System.lineSeparator())
+                .add("0. Stub Action")
+                .add("Select: " + System.lineSeparator())
                 .toString();
         assertThat(new String(out.toByteArray()), is(expect));
         System.setOut(def);

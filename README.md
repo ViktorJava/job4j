@@ -1,9 +1,17 @@
 # Программист Вдовиченко Виктора
->Начал стажировку на курсе Java разработчика http://job4j.ru 
+Начал стажировку на курсе Java разработчика http://job4j.ru 
 Ниже перечислены проекты, реализованые мной во время стажировки. 
 Проекты будут добавляться по мере реализации.
->
+
 ## Уровень "Стажер"
+**Мои ожидания:**
+>Научиться использовать инструмент сборки **Maven**. Писать модульные тесты и оформлять свой код,
+> так как это делают профессионалы. Освоить базовые принципы построения программы через 
+>объектно-ориентированный подход. Изучить **Java Collections Frameworks**. 
+>Уверенно применять **GitHub**. Выполнять рефакторинг кода с применением шаблонов проектирования.
+
+**Мои достижения:**
+
 [chapter_001](https://github.com/ViktorJava/job4j/tree/master/chapter_001) - Базовый синтаксис языка: Типы данных, 
 операторы условия, циклы, массивы.
  
@@ -24,7 +32,6 @@
 
 **Задания выполненные в процессе прохождения блока:**
 * разработка проекта работы с заявками, Tracker
-* 
 * шаблоны проектирования: Стратегия, Декоратор, Singleton, Фабричный метод, Абстрактная фабрика
 * наследование
 * инкапсуляция
@@ -44,9 +51,7 @@ MIT
 
 ---
 
-> [Facebook.com](https://www.facebook.com/viktor.vdovichenko) &nbsp;&middot;&nbsp;
-> GitHub [@ViktorJava](https://github.com/ViktorJava) &nbsp;&middot;&nbsp;
-> OK [Odnoklassniki](https://ok.ru/profile/571539586668)
+>e-mail:[gmail.com](gipsyscrew@gmail.com) &nbsp;&middot;&nbsp;fb:[Facebook.com](https://www.facebook.com/viktor.vdovichenko) &nbsp;&middot;&nbsp;
+> GitHub:[@ViktorJava](https://github.com/ViktorJava) &nbsp;&middot;&nbsp;
+> OK:[Odnoklassniki](https://ok.ru/profile/571539586668)
 
-[liberapay]:https://liberapay.com/ViktorJava/donate
-[liberapay img]:https://liberapay.com/assets/widgets/donate.svg

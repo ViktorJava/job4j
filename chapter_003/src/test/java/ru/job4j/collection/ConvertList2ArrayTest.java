@@ -1,4 +1,4 @@
-package collection;
+package ru.job4j.collection;
 
 import org.junit.Test;
 
@@ -52,5 +52,4 @@ public class ConvertList2ArrayTest {
         };
         assertThat(result, is(expect));
     }
-
 }

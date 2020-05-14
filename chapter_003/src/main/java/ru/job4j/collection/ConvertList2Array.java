@@ -1,4 +1,4 @@
-package collection;
+package ru.job4j.collection;
 
 import java.util.List;
 
@@ -19,7 +19,7 @@ public class ConvertList2Array {
      *
      * @param list  список чисел.
      * @param cells колличество ячеек в строке.
-     * @return
+     * @return двумерный массив типа int.
      */
     public static int[][] toArray(List<Integer> list, int cells) {
         int groups = (int) Math.ceil((double) list.size() / cells);

@@ -51,7 +51,8 @@ MIT
 
 ---
 
->e-mail:[gmail.com](gipsyscrew@gmail.com) &nbsp;&middot;&nbsp;fb:[Facebook.com](https://www.facebook.com/viktor.vdovichenko) &nbsp;&middot;&nbsp;
+>e-mail:[gmail.com](mailto:gipsyscrew@gmail.com) &nbsp;&middot;&nbsp;
+>fb:[Facebook.com](https://www.facebook.com/viktor.vdovichenko) &nbsp;&middot;&nbsp;
 > GitHub:[@ViktorJava](https://github.com/ViktorJava) &nbsp;&middot;&nbsp;
 > OK:[Odnoklassniki](https://ok.ru/profile/571539586668)
 

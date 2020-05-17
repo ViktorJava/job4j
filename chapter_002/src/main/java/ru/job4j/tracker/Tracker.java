@@ -1,6 +1,7 @@
 package ru.job4j.tracker;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -8,28 +9,26 @@ import java.util.Random;
  * Данный класс используется, как хранилище для заявок.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
- * @version 0.1
+ * @version 1.1
  * @since 27.10.2019
  */
 public class Tracker {
-    /**
-     * Массив для хранение заявок.
-     */
-    private final Item[] items = new Item[100];
-    /**
-     * Указатель ячейки для новой заявки.
-     */
-    private int position = 0;
+
+    //Список для хранение заявок.
+    //Лучшей практикой считается взаимодействие через интерфейсы,
+    // а не через конкретные реализации,
+    // что позволяет использовать все преимущества полиморфизма.
+    private final List<Item> items = new ArrayList<>();
 
     /**
-     * Метод реализующий добавление заявки в хранилище
+     * Метод реализующий создание заявки и присваивание id.
      *
-     * @param item новая заявка
-     * @return возвращает добавленный экземпляр класса item
+     * @param item новая заявка.
+     * @return возвращает добавленный экземпляр класса Item.
      */
     public Item add(Item item) {
         item.setId(this.generateId());
-        this.items[this.position++] = item;
+        this.items.add(item);
         return item;
     }
 
@@ -38,7 +37,7 @@ public class Tracker {
      * Так-как у заявки нет уникальных полей, для идентификации заявки,
      * будем создавать уникальный ключ id.
      *
-     * @return Уникальный ключ
+     * @return Уникальный ключ.
      */
     private String generateId() {
         Random rm = new Random();
@@ -46,95 +45,74 @@ public class Tracker {
     }
 
     /**
-     * Метод заменяет ячейку в массиве this.items[].
-     * Для этого находим ячейку по id
+     * Редактирование имени заявки.
      *
-     * @param id   идентификатор ячейки в массиве объектов
-     * @param item обьект item (товар)
-     * @return true если операция завершилась удачно
+     * @param id      существующий id заявки.
+     * @param newItem обьект item.
+     * @return true если операция завершилась удачно, иначе false.
      */
-    public boolean replace(String id, Item item) {
+    public boolean replace(String id, Item newItem) {
         boolean result = false;
-        /**
-         * Одна причина использования id.equals("") или id.length() == 0 но не id.isEmpty() заключается в том,
-         * что метод id.isEmpty() был введен в Java 1.6. (короче говоря, совместимость и всё такое)
-         */
-        if (this.position > 0 && id.length() != 0 && item != null) {
-            int index = 0;
-            while (index < this.position) {
-                if (items[index].getId().equals(id)) {
-                    this.items[index] = item;
-                    item.setId(id);
-                    result = true;
-                    break;
-                }
-                index++;
-            }
-        }
-        return result;
-    }
-
-    /**
-     * Метод должен удалить ячейку в массиве this.items[]. Для этого необходимо найти ячейку в массиве по id.
-     * Далее сместить все значения справа от удаляемого элемента - на одну ячейку влево с помощью System.arraycopy().
-     *
-     * @param id идентификатор ячейки в массиве объектов
-     * @return true если операция завершилась успешно
-     */
-    public boolean delete(String id) {
-        boolean result = false;
-        for (int index = 0; index < this.position; index++) {
-            if (items[index].getId().equals(id)) {
-                System.arraycopy(items, index + 1, items, index, items.length - index - 1);
-                position--;
+        int index = 0;
+        for (Item item : items) {
+            if (item.getId().equals(id)) {
+                newItem.setId(id);
+                items.set(index, newItem);
                 result = true;
                 break;
             }
+            index++;
         }
         return result;
     }
 
     /**
-     * Метод возвращает копию массива this.items[] без null элементов.
+     * Метод должен удалить заявку по её id.
      *
-     * @return массив классов.
+     * @param id идентификатор заявки.
+     * @return false при неудаче, иначе true.
      */
-    public Item[] findAll() {
-        Item[] result = Arrays.copyOf(items, this.position);
-        return result;
+    public boolean delete(String id) {
+        Item item = findById(id);
+        return items.remove(item);
     }
 
     /**
-     * Метод проверяет в цикле все элементы массива this.items[], сравнивая name
-     * (используя метод getName класса Item) с аргументом метода String key.
-     * Элементы, у которых совпадает name, копирует в результирующий массив и возвращает его;
+     * Метод возвращает все существующие заявки.
      *
-     * @param key имя поиска
-     * @return массив классов.
+     * @return список заявок.
      */
-    public Item[] findByName(String key) {
-        int count = 0;
-        Item[] result = new Item[this.position];
-        for (int index = 0; index < this.position; index++) {
-            if (items[index].getName().equals(key)) {
-                result[count++] = this.items[index];
+    public List<Item> findAll() {
+        return items;
+    }
+
+    /**
+     * Поиск заявки по имени.
+     *
+     * @param key имя заявки.
+     * @return заявка в списке.
+     */
+    public List<Item> findByName(String key) {
+        ArrayList<Item> resultName = new ArrayList<>();
+        for (Item item : items) {
+            if (item.getName().equals(key)) {
+                resultName.add(item);
             }
         }
-        return Arrays.copyOf(result, count);
+        return resultName;
     }
 
     /**
-     * Метод проверяет в цикле все элементы массива this.items[],
-     * сравнивая id с аргументом String id и возвращает найденный Item.
+     * Поиск заявки по id.
      *
-     * @param id идентификатор искомого объекта.
-     * @return Если Item не найден - возвращает null.
+     * @param id идентификатор заявки.
+     * @return если Item не найден - возвращает null.
      */
     public Item findById(String id) {
         Item result = null;
-        for (int index = 0; index < this.position; index++) {
-            if (items[index].getId().equals(id)) {
-                result = items[index];
+        for (Item item : items) {
+            if (item.getId().equals(id)) {
+                result = item;
             }
         }
         return result;

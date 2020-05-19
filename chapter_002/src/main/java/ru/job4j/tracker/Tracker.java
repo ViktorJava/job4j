@@ -9,7 +9,7 @@ import java.util.Random;
  * Данный класс используется, как хранилище для заявок.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
- * @version 1.1
+ * @version 1.2
  * @since 27.10.2019
  */
 public class Tracker {
@@ -48,20 +48,16 @@ public class Tracker {
      * Редактирование имени заявки.
      *
      * @param id      существующий id заявки.
-     * @param newItem обьект item.
-     * @return true если операция завершилась удачно, иначе false.
+     * @param newItem новая заявка.
+     * @return true если операция завершилась успешно, иначе false.
      */
     public boolean replace(String id, Item newItem) {
         boolean result = false;
-        int index = 0;
-        for (Item item : items) {
-            if (item.getId().equals(id)) {
-                newItem.setId(id);
-                items.set(index, newItem);
-                result = true;
-                break;
-            }
-            index++;
+        int index = indexOfItem(id);
+        newItem.setId(items.get(index).getId());
+        if (index != -1) {
+            items.set(index, newItem);
+            result = true;
         }
         return result;
     }
@@ -109,10 +105,23 @@ public class Tracker {
      * @return если Item не найден - возвращает null.
      */
     public Item findById(String id) {
-        Item result = null;
+        //FIXME прикрутить новый метод indexOfItem.
+        int index = indexOfItem(id);
+        return index < 0 ? null : items.get(index);
+    }
+
+    /**
+     * Поиск Item в ArrayList по заданному id.
+     *
+     * @param id идентификатор который будем искать.
+     * @return индэкс найденного Item или -1 при отсутствии Item.
+     */
+    private int indexOfItem(String id) {
+        int result = -1;
         for (Item item : items) {
             if (item.getId().equals(id)) {
-                result = item;
+                result = items.indexOf(item);
+                break;
             }
         }
         return result;

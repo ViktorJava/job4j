@@ -11,7 +11,7 @@ import static org.junit.Assert.assertThat;
  * Тесты класса Tracker
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
- * @version 1.1
+ * @version 1.2
  * @since 14.11.2019
  */
 public class TrackerTest {
@@ -33,22 +33,23 @@ public class TrackerTest {
 
     /**
      * Тест замены заявки.
-     * Создаём новую заявку (test1).
-     * Добавляем заявку в трекер. Теперь объект проинициализирован id.
-     * Создаем новую заявку (test2).
-     * Проставляем старый id заявки test1, в новую заявку.
+     * Создаём новуые заявки (item1,item2).
+     * Добавляем заявки в трекер, присваивается id.
+     * Создаем новую заявку (newItem) без id.
+     * Проставляем старый id, заявки item2, в новую заявку newItem.
      * Обновляем заявку в трекере.
-     * Проверяем, что заявка с таким id имеет новые имя test2.
+     * Проверяем, что имя заявки изменилось с item2 на newItem.
      */
     @Test
     public void whenReplaceNameThenReturnNewName() {
         Tracker tracker = new Tracker();
-        Item previous = new Item("test1");
-        tracker.add(previous);
-        Item next = new Item("test2");
-        next.setId(previous.getId());
-        tracker.replace(previous.getId(), next);
-        assertThat(tracker.findById(previous.getId()).getName(), is("test2"));
+        Item item1 = new Item("item1");
+        Item item2 = new Item("item2");
+        tracker.add(item1);
+        tracker.add(item2);
+        Item newItem = new Item("newItem");
+        tracker.replace(item2.getId(), newItem);
+        assertThat(tracker.findById(item2.getId()).getName(), is("newItem"));
     }
 
     /**

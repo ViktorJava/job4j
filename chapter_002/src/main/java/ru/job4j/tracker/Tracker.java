@@ -9,15 +9,15 @@ import java.util.Random;
  * Данный класс используется, как хранилище для заявок.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
- * @version 1.2
+ * @version 1.3
  * @since 27.10.2019
  */
 public class Tracker {
 
-    //Список для хранение заявок.
-    //Лучшей практикой считается взаимодействие через интерфейсы,
-    // а не через конкретные реализации,
-    // что позволяет использовать все преимущества полиморфизма.
+    /* Список для хранение заявок.
+    Лучшей практикой считается взаимодействие через интерфейсы,
+    а не через конкретные реализации,
+    что позволяет использовать все преимущества полиморфизма. */
     private final List<Item> items = new ArrayList<>();
 
     /**
@@ -54,8 +54,8 @@ public class Tracker {
     public boolean replace(String id, Item newItem) {
         boolean result = false;
         int index = indexOfItem(id);
-        newItem.setId(items.get(index).getId());
         if (index != -1) {
+            newItem.setId(items.get(index).getId());
             items.set(index, newItem);
             result = true;
         }
@@ -69,8 +69,13 @@ public class Tracker {
      * @return false при неудаче, иначе true.
      */
     public boolean delete(String id) {
-        Item item = findById(id);
-        return items.remove(item);
+        boolean result = false;
+        int index = indexOfItem(id);
+        if (index != -1) {
+            items.remove(index);
+            result = true;
+        }
+        return result;
     }
 
     /**
@@ -105,24 +110,25 @@ public class Tracker {
      * @return если Item не найден - возвращает null.
      */
     public Item findById(String id) {
-        //FIXME прикрутить новый метод indexOfItem.
         int index = indexOfItem(id);
         return index < 0 ? null : items.get(index);
     }
 
     /**
-     * Поиск Item в ArrayList по заданному id.
+     * Поиск индэкса заявки в ArrayList по заданному id.
      *
-     * @param id идентификатор который будем искать.
-     * @return индэкс найденного Item или -1 при отсутствии Item.
+     * @param id идентификатор поиска.
+     * @return индэкс найденной заявки или -1 при отсутствии.
      */
     private int indexOfItem(String id) {
         int result = -1;
+        int index = 0;
         for (Item item : items) {
             if (item.getId().equals(id)) {
-                result = items.indexOf(item);
+                result = index;
                 break;
             }
+            index++;
         }
         return result;
     }

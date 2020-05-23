@@ -3,15 +3,14 @@ package ru.job4j.collection;
 /**
  * Модель данных.
  * Этот класс имеет два поля: имя работы и приоритет исполнения.
- * Наша задача написать для него сортировку по возрастанию по полю priority,
- * а так же сделать сортировку по имени по возрастанию.
- * Для этого мы реализуем интерфейс Comparable.
+ * Наша задача написать для него сортировку по возрастанию и убыванию,
+ * по полю priority, а так же по полю name.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
  * @version 0.1
  * @since 18.05.2020
  */
-public class Job implements Comparable<Job> {
+public class Job {
     private String name;
     private int priority;
 
@@ -30,15 +29,6 @@ public class Job implements Comparable<Job> {
 
     @Override
     public String toString() {
-        return "Job{"
-                + "name='" + name + '\''
-                + ", priority=" + priority
-                + '}';
-    }
-
-    // Переопределение метода, класса Comparable.
-    @Override
-    public int compareTo(Job another) {
-        return Integer.compare(priority, another.priority);
+        return String.format("Job{name='%s', priority=%02d}", name, priority);
     }
 }

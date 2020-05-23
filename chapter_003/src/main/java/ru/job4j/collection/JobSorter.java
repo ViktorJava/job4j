@@ -6,8 +6,8 @@ import java.util.List;
 
 /**
  * Класс сортировки обобщённых данных типа Job.
- * Сортируем данные по приоритету.
- * Сортируем данные по имени через компаратор.
+ * Сортируем данные через компаратор, по полям name, priority.
+ * Комбинированные сортировки по возрастанию и по убыванию.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
  * @version 0.1
@@ -16,14 +16,13 @@ import java.util.List;
 public class JobSorter {
     public static void main(String[] args) {
         List<Job> jobs = Arrays.asList(
-                new Job("Fix bugs", 4),
-                new Job("Impl task", 2),
-                new Job("Reboot server", 1)
+                new Job("Impl task", 1),
+                new Job("Fix bug", 0)
         );
-        System.out.println(jobs); // Данные до сортировки.
-        Collections.sort(jobs); // Сорировка по приоритету.
-        System.out.println(jobs); // Данные после сортировки.
-        Collections.sort(jobs, new SortByNameJob()); // Сортировка по имени через компаратор.
-        System.out.println(jobs);
+
+        Collections.sort(jobs, new JobAscByName().thenComparing(new JobAscByPriority()));
+        System.out.println("name-priority: " + jobs);
+        Collections.sort(jobs, new JobAscByPriority().thenComparing(new JobDescByName()));
+        System.out.println("priority-name: " + jobs);
     }
 }

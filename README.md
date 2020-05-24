@@ -3,6 +3,9 @@
 Ниже перечислены проекты, реализованые мной во время стажировки. 
 Проекты будут добавляться по мере реализации.
 
+[![codecov](https://codecov.io/gh/ViktorJava/job4j/branch/master/graph/badge.svg)](https://codecov.io/gh/ViktorJava/job4j)
+[![Build Status](https://travis-ci.org/ViktorJava/job4j.svg?branch=master)](https://travis-ci.org/ViktorJava/job4j)
+
 ## Уровень "Стажер"
 **Мои ожидания:**
 >Научиться использовать инструмент сборки **Maven**. Писать модульные тесты и оформлять свой код,

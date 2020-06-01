@@ -5,6 +5,9 @@
 
 [![codecov](https://codecov.io/gh/ViktorJava/job4j/branch/master/graph/badge.svg)](https://codecov.io/gh/ViktorJava/job4j)
 [![Build Status](https://travis-ci.org/ViktorJava/job4j.svg?branch=master)](https://travis-ci.org/ViktorJava/job4j)
+![GitHub repo size](https://img.shields.io/github/repo-size/ViktorJava/job4j)
+![GitHub top language](https://img.shields.io/github/languages/top/ViktorJava/job4j)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/ViktorJava/job4j)
 
 ## Уровень "Стажер"
 **Мои ожидания:**

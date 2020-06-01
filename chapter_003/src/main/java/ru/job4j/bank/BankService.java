@@ -74,9 +74,6 @@ public class BankService {
      * Сначала нужно найти пользователя.
      * Потом получить список счетов этого пользователя
      * и в нем найти нужный счет.
-     * Можно найти нужный нам счёт методом брут-форс,
-     * перебирая в цикле все счета клиента и
-     * через equals сверять реквизиты.
      *
      * @param passport  Номер паспорта.
      * @param requisite Номер счёта.
@@ -86,9 +83,13 @@ public class BankService {
         Account find = null;
         User user = findByPassport(passport);
         if (user != null) {
-            List<Account> currentAccounts = users.get(user);
-            int index = currentAccounts.indexOf(new Account(requisite, -1));
-            find = currentAccounts.get(index);
+            List<Account> accounts = users.get(user);
+            for (Account currentAccount : accounts) {
+                if (currentAccount.getRequisite().equals(requisite)) {
+                    find = currentAccount;
+                    break;
+                }
+            }
         }
         return find;
     }

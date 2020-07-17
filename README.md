@@ -9,7 +9,7 @@
 ![GitHub top language](https://img.shields.io/github/languages/top/ViktorJava/job4j)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/ViktorJava/job4j)
 
-[![Anurag's github stats](https://github-readme-stats.vercel.app/api?username=@ViktorJava)](https://github.com/anuraghazra/github-readme-stats)
+[![Anurag's github stats](https://github-readme-stats.vercel.app/api?username=ViktorJava)](https://github.com/anuraghazra/github-readme-stats)
 
 ## Уровень "Стажер"
 **Мои ожидания:**

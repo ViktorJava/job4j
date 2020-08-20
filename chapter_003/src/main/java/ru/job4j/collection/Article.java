@@ -1,5 +1,8 @@
 package ru.job4j.collection;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Генератор текста.
  * Задан "большой текст". Из него вырезают слова и предложения.
@@ -8,6 +11,18 @@ package ru.job4j.collection;
  * Для этого: "новый текст" делим на слова и отправляем слова в массив.
  * Затем можно пробежаться по массиву слов и сравнить каждое слово
  * с "большим текстом".
+ * <p>
+ * Для этого:
+ * 1. Очистили строки от всех символов, которые не попадают под условия
+ * регулярного выражения (символы не входящие в диапазоны a-zA-Zа-яА-Я).
+ * Привели строки к нижнему регистру, разобрали на слова и сложили в массивы строк.
+ * 2. В первом цикле, заполнили карту, словами из строки "большого текста", где
+ * ключ карты- это слово из строки, а значение ключа- это частота повторения этого слова.
+ * 3. Во втором цикле, слова из нового текста сверили с ключами заполненной карты.
+ * Если слово "нового текста" присутствует в качестве ключа в карте, значит значение этого
+ * ключа уменьшается на еденицу иначе в карту записываем новый ключ со значением -1.
+ * 4. В третем цикле, проверяем значения всех ключей в карте на -1 и возвращем false,
+ * иначе возвращаем true.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
  * @version 0.1
@@ -24,12 +39,31 @@ public class Article {
      * составлен из "большого текста" иначе false.
      */
     public static boolean generateBy(String origin, String line) {
-        String[] words = line.split(" ");
-        for (String word : words) {
-            if (!origin.contains(word)) {
-                return false;
+        boolean result = true;
+        Map<String, Integer> tempMap = new HashMap<>();
+        String[] bigLineArray = origin.replaceAll("[^a-zA-Zа-яА-Я ]", "")
+                .toLowerCase()
+                .split(" ");
+        String[] newLineArray = line.replaceAll("[^a-zA-Zа-яА-Я ]", "")
+                .toLowerCase()
+                .split(" ");
+
+        for (String key : bigLineArray) {
+            // Возвращает значение, соответствующее ключу key.
+            // Если такой ключ не существует — возвращает значение по умолчанию.
+            tempMap.put(key, tempMap.getOrDefault(key, 0) + 1);
+        }
+
+        for (String key : newLineArray) {
+            tempMap.put(key, tempMap.getOrDefault(key, 0) - 1);
+        }
+
+        for (String key : tempMap.keySet()) {
+            if (tempMap.get(key) < 0) {
+                result = false;
+                break;
             }
         }
-        return true;
+        return result;
     }
 }

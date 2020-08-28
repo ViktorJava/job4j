@@ -1,7 +1,8 @@
 package ru.job4j.lambda;
 
-import java.util.Arrays;
 import java.util.Comparator;
+
+import static java.util.Arrays.sort;
 
 /**
  * Функциональные итерфейсы. [#173317]
@@ -15,44 +16,33 @@ import java.util.Comparator;
  * Comparator<T> с абстрактным методом int compare(T o1, T o2);
  * Для сравнения строк в лексикографическом порядке, применяем
  * метод compareTo() реализованный в классе String.
+ * Сортировку выполняем статическим методом класса Arrays
+ * см. секцию import.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
- * @version 0.1
+ * @version 1.0
  * @since 20.08.2020
  */
 public class Fi {
-    public static void main(String[] args) {
-        Attachment[] atts = {
-                new Attachment("Cats and dogs", 32756),
-                new Attachment("People", 865),
-                new Attachment("Home and architect", 19768)
-        };
 
-        /*
-        Компаратор для строк через лямбда, сортирующий строки по длинне.
-        [{name='People', size=865}, {name='Cats and dogs', size=32756}, {name='Home and architect', size=19768}]
-         */
+    // Компаратор для строк через лямбда, сортирующий строки по длинне.
+    public Attachment[] cmpSize(Attachment[] attachment) {
         Comparator<Attachment> cmpSize = (left, right) -> left.getName().length() - right.getName().length();
-        Arrays.sort(atts, cmpSize);
-        System.out.println("Сортировка строки по возрастанию длинны.");
-        System.out.println(Arrays.toString(atts));
+        sort(attachment, cmpSize);
+        return attachment;
+    }
 
-        /*
-        Компаратор для строк через лямбда. Лексикографическая сортировка строк.
-        [{name='Cats and dogs', size=32756}, {name='Home and architect', size=19768}, {name='People', size=865}]
-         */
+    // Компаратор для строк через лямбда. Лексикографическая сортировка строк.
+    public Attachment[] cmpText(Attachment[] attachment) {
         Comparator<Attachment> cmpText = (left, right) -> left.getName().compareTo(right.getName());
-        Arrays.sort(atts, cmpText);
-        System.out.println("Лексикографическая сортировка строк.");
-        System.out.println(Arrays.toString(atts));
+        sort(attachment, cmpText);
+        return attachment;
+    }
 
-        /*
-        Компаратор для строк через лямбда. Компаратор сортирует строки по убыванию длины.
-        [{name='Home and architect', size=19768}, {name='Cats and dogs', size=32756}, {name='People', size=865}]
-         */
+    // Компаратор для строк через лямбда. Компаратор сортирует строки по убыванию длины.
+    public Attachment[] cmpDescSize(Attachment[] attachment) {
         Comparator<Attachment> cmpDescSize = (left, righ) -> righ.getName().length() - left.getName().length();
-        Arrays.sort(atts, cmpDescSize);
-        System.out.println("Сортировка строки по убыванию длины.");
-        System.out.println(Arrays.toString(atts));
+        sort(attachment, cmpDescSize);
+        return attachment;
     }
 }

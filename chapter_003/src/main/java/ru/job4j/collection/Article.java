@@ -19,13 +19,9 @@ import java.util.Map;
  * ключа уменьшается на еденицу иначе в карту записываем новый ключ со значением -1.
  * 4. В третем цикле, проверяем значения всех ключей в карте на -1 и возвращем false,
  * иначе возвращаем true.
- * <p>
- * В первом и втором циклах, применяется дэфолтный метод интерфейса Map:
- * getOrDefault(key, 0), который возвращает значение, соответствующее ключу key.
- * Если такой ключ не существует — возвращает значение по умолчанию (JDK 8).
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
- * @version 0.1
+ * @version 0.1.1
  * @since 20.07.2020
  */
 public class Article {
@@ -50,11 +46,19 @@ public class Article {
         // Заполнение карты, словами из строки bigLineArray, где ключ карты- это слово из строки,
         // а значение ключа- это частота повторения этого слова.
         for (String key : bigLineArray) {
-            tempMap.put(key, tempMap.getOrDefault(key, 0) + 1);
+            int count = 1;
+            if (tempMap.containsKey(key)) {
+                count = tempMap.get(key) + 1;
+            }
+            tempMap.put(key, count);
         }
         // Слова из newLineArray сверили с ключами заполненной карты.
         for (String key : newLineArray) {
-            tempMap.put(key, tempMap.getOrDefault(key, 0) - 1);
+            int count = -1;
+            if (tempMap.containsKey(key)) {
+                count = tempMap.get(key) - 1;
+            }
+            tempMap.put(key, count);
         }
         // Проверяем значения всех ключей в карте на -1
         for (String key : tempMap.keySet()) {

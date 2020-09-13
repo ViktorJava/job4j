@@ -34,6 +34,17 @@ public class ArticleTest {
     }
 
     @Test
+    public void whenLineAndOriginGnrFalse() {
+        assertThat(
+                Article.generateBy(
+                        "Мама мыла раму и окно",
+                        "мыла мыла мышу"
+                ),
+                is(false)
+        );
+    }
+
+    @Test
     public void whenLongTextTrue() {
         assertThat(
                 Article.generateBy(

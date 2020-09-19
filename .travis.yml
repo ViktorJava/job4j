@@ -13,8 +13,8 @@ notifications:
   email:
     recipients:
       - gipsyscrew@gmail.com
-    on_success: never # default: change
+    on_success: change # default: change
     on_failure: always # default: always
 env:
   global:
-    - CODECOV_TOKEN="fcfc5c77-d568-4763-a25d-045f06699502"
+    - CODECOV_TOKEN="835b73c4-ca5e-4fd3-b2ae-4acbe6028a00"

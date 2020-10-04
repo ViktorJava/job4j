@@ -13,7 +13,7 @@ import static org.junit.Assert.*;
  */
 public class PredicateCheckEvenAndPositiveTest {
     @Test
-    void test() {
+    public void test() {
         assertTrue(PredicateCheckEvenAndPositive.check(2));
         assertFalse(PredicateCheckEvenAndPositive.check(-2));
         assertFalse(PredicateCheckEvenAndPositive.check(1));

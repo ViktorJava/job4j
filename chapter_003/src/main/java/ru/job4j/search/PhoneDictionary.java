@@ -10,8 +10,8 @@ import java.util.function.Predicate;
  * Модель справочника.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
- * @version 0.2
- * @since 2.10.2020
+ * @version 0.3
+ * @since 12.05.2020
  */
 public class PhoneDictionary {
     private final ArrayList<Person> persons = new ArrayList<>();
@@ -29,16 +29,17 @@ public class PhoneDictionary {
      * Вернуть список всех пользователей, которые содержат key в любых полях.
      *
      * @param key Ключ поиска.
-     * @return Список подошедших пользователей.
+     * @return Список пользователей.
      */
     public ArrayList<Person> find(String key) {
-        Predicate<Person> combine = t -> t.getName().contains(key)
-                || t.getAddres().contains(key)
-                || t.getPhone().contains(key)
-                || t.getSurname().contains(key);
+        Predicate<Person> combine = t -> t.getName().contains(key);
         ArrayList<Person> result = new ArrayList<>();
         for (Person person : persons) {
-            if (combine.test(person)) {
+            if (combine
+                    .or(t -> t.getAddres().contains(key))
+                    .or(t -> t.getPhone().contains(key))
+                    .or(t -> t.getSurname().contains(key))
+                    .test(person)) {
                 result.add(person);
             }
         }

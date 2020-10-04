@@ -1,7 +1,7 @@
 package ru.job4j.collection;
 
 import java.util.Arrays;
-import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -20,9 +20,14 @@ public class JobSorter {
                 new Job("Fix bug", 0)
         );
 
-        Collections.sort(jobs, new JobAscByName().thenComparing(new JobAscByPriority()));
+        jobs.sort(new JobAscByName().thenComparing(new JobAscByPriority()));
         System.out.println("name-priority: " + jobs);
-        Collections.sort(jobs, new JobAscByPriority().thenComparing(new JobDescByName()));
+        jobs.sort(new JobAscByPriority().thenComparing(new JobDescByName()));
         System.out.println("priority-name: " + jobs);
+
+        Comparator<Job> compareName = Comparator.comparing(Job::getName);
+        Comparator<Job> comparePriority = Comparator.comparing(Job::getPriority);
+        Comparator<Job> combine = compareName.thenComparing(comparePriority);
+        jobs.sort(combine);
     }
 }

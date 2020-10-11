@@ -16,7 +16,6 @@ public class MRSupplier {
      * @return Supplier с пустой строкой.
      */
     public static Supplier<String> supplier() {
-        Supplier<String> supplier = String::new;
-        return supplier;
+        return String::new;
     }
 }

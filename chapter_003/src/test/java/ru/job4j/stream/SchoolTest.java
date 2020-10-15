@@ -14,7 +14,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
  * Тесты.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
- * @version 0.1
+ * @version 0.2
  * @since 14.10.2020
  */
 public class SchoolTest {
@@ -33,10 +33,14 @@ public class SchoolTest {
         students.add(new Student(90, "Surname9"));
     }
 
+    /**
+     * Условия: [70-100];
+     * Предикат: >=70 && <=100.
+     */
     @Test
     public void whenCollectClassA() {
         School sc = new School();
-        Predicate<Student> pr = s -> s.getScore() >= 70;
+        Predicate<Student> pr = s -> s.getScore() >= 70 && s.getScore() <= 100;
         List<Student> rsl = sc.collect(students, pr);
         List<Student> expected = new ArrayList<>();
         expected.add(new Student(70, "Surname7"));
@@ -45,10 +49,14 @@ public class SchoolTest {
         assertThat(rsl, is(expected));
     }
 
+    /**
+     * Условия: [50-70);
+     * Предикат: >=50 && <70.
+     */
     @Test
     public void whenCollectClassB() {
         School sc = new School();
-        Predicate<Student> pr = s -> s.getScore() >= 50 && s.getScore() <= 60;
+        Predicate<Student> pr = s -> s.getScore() >= 50 && s.getScore() < 70;
         List<Student> rsl = sc.collect(students, pr);
         List<Student> expected = new ArrayList<>();
         expected.add(new Student(50, "Surname5"));
@@ -56,10 +64,14 @@ public class SchoolTest {
         assertThat(rsl, is(expected));
     }
 
+    /**
+     * Условия: (0-50);
+     * Предикат: >0 && <50.
+     */
     @Test
     public void whenCollectClassC() {
         School sc = new School();
-        Predicate<Student> pr = s -> s.getScore() >= 10 && s.getScore() <= 40;
+        Predicate<Student> pr = s -> s.getScore() > 0 && s.getScore() < 50;
         List<Student> rsl = sc.collect(students, pr);
         List<Student> expected = new ArrayList<>();
         expected.add(new Student(10, "Surname1"));

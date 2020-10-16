@@ -1,5 +1,5 @@
 /**
- * Лямбда выражения и функциональные интерфейсы.
+ * Lambda, FP (Functional Package).
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
  * @version 0.1

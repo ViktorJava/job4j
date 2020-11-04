@@ -47,8 +47,8 @@ public class Profiles {
     public static List<Adress> uniquAdressList(List<Profile> profiles) {
         return profiles.stream()
                 .map(Profile::getAdress)
-                .distinct()
                 .sorted(Comparator.comparing(Adress::getCity))
+                .distinct()
                 .collect(Collectors.toList());
     }
 }

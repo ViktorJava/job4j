@@ -6,7 +6,7 @@ import java.util.Objects;
  * Модель адреса проживания.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
- * @version 0.1
+ * @version 0.2
  * @since 16.10.2020
  */
 public class Adress {
@@ -20,6 +20,10 @@ public class Adress {
         this.street = street;
         this.home = home;
         this.apartment = apartment;
+    }
+
+    public String getCity() {
+        return city;
     }
 
     @Override

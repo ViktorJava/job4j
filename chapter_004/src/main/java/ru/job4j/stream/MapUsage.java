@@ -2,6 +2,7 @@ package ru.job4j.stream;
 
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
@@ -11,7 +12,7 @@ import java.util.stream.Collectors;
  * 3. В качестве значение использовать объект студента.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
- * @version 0.1
+ * @version 0.2
  * @since 09.11.2020
  */
 public class MapUsage {
@@ -22,6 +23,6 @@ public class MapUsage {
      * @return Карта студентов.
      */
     public static Map<String, Student> studentsToMap(List<Student> students) {
-        return students.stream().distinct().collect(Collectors.toMap(Student::getSurname, e -> e));
+        return students.stream().collect(Collectors.toMap(Student::getSurname, Function.identity(), (existing, replacement) -> existing));
     }
 }

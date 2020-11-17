@@ -16,7 +16,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class SumTest {
     @Test
     public void getSum() {
-        int[] array = {12, 20, 70,};
+        int[] array = {12, 20, 70};
         int result = 82;
         int expected = Sum.getSum(array);
         assertThat(result, is(expected));

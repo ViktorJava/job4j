@@ -1,13 +1,12 @@
-package ru.job4j.sort;
+package ru.job4j.array;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.*;
 
 /**
- * Тесты метода merge()
+ * Тесты метода объединения двух отсортированных массивов.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
  * @version 0.1

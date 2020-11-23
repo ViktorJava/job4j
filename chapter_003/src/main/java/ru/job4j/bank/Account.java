@@ -13,49 +13,23 @@ public class Account {
     private String requisite;
     private double balance;
 
-    /**
-     * Конструктор банковского счёта.
-     *
-     * @param requisite Номер счёта.
-     * @param balance   Состояние счёта.
-     */
     public Account(String requisite, double balance) {
         this.requisite = requisite;
         this.balance = balance;
     }
 
-    /**
-     * Гетер номера счёта.
-     *
-     * @return Номер счёта.
-     */
     public String getRequisite() {
         return requisite;
     }
 
-    /**
-     * Сетер номера счёта.
-     *
-     * @param requisite Номер счёта.
-     */
     public void setRequisite(String requisite) {
         this.requisite = requisite;
     }
 
-    /**
-     * Состояние счёта.
-     *
-     * @return Баланс счёта.
-     */
     public double getBalance() {
         return balance;
     }
 
-    /**
-     * Сетер состояния.
-     *
-     * @param balance Бабло положить на счёт.
-     */
     public void setBalance(double balance) {
         this.balance = balance;
     }

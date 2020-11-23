@@ -4,12 +4,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Stream;
 
 /**
  * Главный сервис.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
- * @version 0.1
+ * @version 0.2
  * @since 24.05.2020
  */
 public class BankService {
@@ -23,7 +24,7 @@ public class BankService {
      * @param user Клиент банка.
      */
     public void addUser(User user) {
-        this.users.putIfAbsent(user, new ArrayList<Account>());
+        this.users.putIfAbsent(user, new ArrayList<>());
     }
 
     /**
@@ -51,10 +52,10 @@ public class BankService {
     /**
      * Это метод ищет пользователя по номеру паспорта.
      * Здесь нужно использовать перебор всех элементов
-     * через цикл for-earch и метод Map.keySet.
+     * через цикл for-each и метод Map.keySet.
      *
      * @param passport Номер паспорта.
-     * @return Клиент банка которому соответствует паспорт.
+     * @return Клиент банка, которому соответствует паспорт.
      */
     public User findByPassport(String passport) {
         User user = null;
@@ -69,6 +70,14 @@ public class BankService {
         return user;
     }
 
+    public User findByPassportStream(String passport) {
+        Stream<User> userStream = users.keySet().stream();
+        return userStream
+                .filter(u -> u.getPassport().equals(passport))
+                .findFirst()
+                .orElse(null);
+    }
+
     /**
      * Этот метод ищет счет пользователя по реквизитам.
      * Сначала нужно найти пользователя.
@@ -80,18 +89,30 @@ public class BankService {
      * @return Аккаунт клиента.
      */
     public Account findByRequisite(String passport, String requisite) {
-        Account find = null;
+        Account result = null;
         User user = findByPassport(passport);
         if (user != null) {
             List<Account> accounts = users.get(user);
             for (Account currentAccount : accounts) {
                 if (currentAccount.getRequisite().equals(requisite)) {
-                    find = currentAccount;
+                    result = currentAccount;
                     break;
                 }
             }
         }
-        return find;
+        return result;
+    }
+
+    public Account findByRequisiteStream(String passport, String requisite) {
+        Account result = null;
+        User user = findByPassportStream(passport);
+        if (user != null) {
+            result = users.get(user).stream()
+                    .filter(account -> account.getRequisite().equals(requisite))
+                    .findFirst()
+                    .orElse(null);
+        }
+        return result;
     }
 
     /**
@@ -101,22 +122,22 @@ public class BankService {
      * @param srcRequisite  Номер счёта отправителя.
      * @param destPassport  Номер паспорта получателя.
      * @param destRequisite Номер счёта получателя.
-     * @param amount        Колличество денег.
+     * @param amount        Количество денег.
      * @return true- при удачной операции, иначе false.
      */
     public boolean transferMoney(String srcPassport, String srcRequisite,
                                  String destPassport, String destRequisite, double amount) {
-        boolean rsl = false;
+        boolean result = false;
         Account src = findByRequisite(srcPassport, srcRequisite);
         Account dest = findByRequisite(destPassport, destRequisite);
         if (src != null && dest != null) {
             if (src.getBalance() >= amount) {
                 dest.setBalance(dest.getBalance() + amount);
                 src.setBalance(src.getBalance() - amount);
-                rsl = true;
+                result = true;
             }
         }
-        return rsl;
+        return result;
     }
 
     public static void main(String[] args) {

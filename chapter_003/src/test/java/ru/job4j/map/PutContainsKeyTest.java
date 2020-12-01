@@ -8,6 +8,8 @@ import java.util.Map;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
+import ru.job4j.map.PutContainsKey.User;
+
 /**
  * Тесты добавления данных типа User в карту.
  *

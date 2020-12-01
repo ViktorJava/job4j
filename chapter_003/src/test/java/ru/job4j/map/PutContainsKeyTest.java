@@ -16,10 +16,10 @@ import static org.hamcrest.core.Is.is;
  * @since 01.12.2020
  */
 public class PutContainsKeyTest {
-    @Test
     /**
      * Добавление данных в Map, с проверкой ключа.
      */
+    @Test
     public void addNewElement() {
         User one = new User(1, "name1");
         User two = new User(2, "name 2");

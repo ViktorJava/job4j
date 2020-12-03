@@ -2,6 +2,7 @@ package ru.job4j.map;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Изменение уже существующей записи в отображении.
@@ -16,7 +17,7 @@ import java.util.Map;
  * значение(строка - имя + фамилия).
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
- * @version 0.1
+ * @version 0.2
  * @since 03.12.2020
  */
 public class ComputeIfPresent {
@@ -31,8 +32,9 @@ public class ComputeIfPresent {
             Map<Integer, String> name,
             Map<Integer, String> surname) {
         Map<Integer, String> map = new HashMap<>(name);
-        map.computeIfPresent(1, (key, value) -> value + " " + surname.get(1));
-        map.computeIfPresent(2, (key, value) -> value + " " + surname.get(2));
+        for (int index : name.keySet()) {
+            map.computeIfPresent(index, (key, value) -> value + " " + surname.get(index));
+        }
         return map;
     }
 }

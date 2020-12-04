@@ -3,7 +3,7 @@ package ru.job4j.array;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 /**
  * @author ViktorJava (gipsyscrew@gmail.com)
@@ -12,7 +12,7 @@ import static org.junit.Assert.assertThat;
  */
 public class MatrixTest {
     /**
-     * Тест таблицей умножения 2x2
+     * Тест-таблицей умножения 2x2
      */
     @Test
     public void when2on2() {
@@ -26,7 +26,7 @@ public class MatrixTest {
     }
 
     /**
-     * Тест таблицей умножения 4x4
+     * Тест-таблицей умножения 4x4
      */
     @Test
     public void when4on4() {
@@ -40,5 +40,4 @@ public class MatrixTest {
         };
         assertThat(table, is(expect));
     }
-
 }

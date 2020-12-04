@@ -1,6 +1,5 @@
 package ru.job4j.array;
 
-
 import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;

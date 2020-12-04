@@ -3,7 +3,7 @@ package ru.job4j.array;
 import org.junit.Test;
 
 import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 /**
  * @author ViktorJava (gipsyscrew@gmail.com)
@@ -33,5 +33,4 @@ public class EndsWithTest {
         boolean result = EndsWith.endsWith(word, post);
         assertThat(result, is(false));
     }
-
 }

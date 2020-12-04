@@ -2,7 +2,7 @@ package ru.job4j.array;
 
 import org.junit.Test;
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 /**
  * @author ViktorJava (gipsyscrew@gmail.com)
@@ -34,6 +34,4 @@ public class SquareTest {
         int[] expect = new int[]{1, 4, 9, 16, 25, 36};
         assertThat(rst, is(expect));
     }
-
-
 }

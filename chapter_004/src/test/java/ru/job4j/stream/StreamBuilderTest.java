@@ -1,4 +1,4 @@
-package ru.job4j.lambda;
+package ru.job4j.stream;
 
 import org.junit.Test;
 

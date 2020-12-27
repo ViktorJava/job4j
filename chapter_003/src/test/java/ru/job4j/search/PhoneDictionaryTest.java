@@ -4,8 +4,9 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
+
 
 /**
  * Тест поиска имени в телефонном справочнике.
@@ -15,12 +16,14 @@ import static org.junit.Assert.assertThat;
  * @since 12.05.2020
  */
 public class PhoneDictionaryTest {
-
     @Test
     public void whenFindByName() {
         PhoneDictionary phones = new PhoneDictionary();
-        phones.add(new Person("Petr", "Arsentev", "534872", "Bryansk"));
+        phones.add(new Person("Petr", "Arsentev",
+                "534872", "Bryansk")
+        );
         ArrayList<Person> persons = phones.find("Petr");
-        assertThat(persons.get(0).getSurname(), is("Arsentev"));
+        assertThat(persons.get(0)
+                          .getSurname(), is("Arsentev"));
     }
 }

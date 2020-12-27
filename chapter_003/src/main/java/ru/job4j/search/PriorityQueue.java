@@ -9,11 +9,11 @@ import java.util.LinkedList;
  * Это позволяет их извлекать в нужном порядке.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
- * @version 0.1
+ * @version 0.2
  * @since 13.05.2020
  */
 public class PriorityQueue {
-    private LinkedList<Task> tasks = new LinkedList<>();
+    private final LinkedList<Task> tasks = new LinkedList<>();
 
     /**
      * Метод должен вставлять в нужную позицию элемент.
@@ -23,8 +23,8 @@ public class PriorityQueue {
      * @param task Добавляемая задача.
      */
     public void put(Task task) {
-        int index = 0;
-        for (Task current : tasks) {
+        var index = 0;
+        for (var current : tasks) {
 
             if (task.getPriority() < current.getPriority()) {
                 break;

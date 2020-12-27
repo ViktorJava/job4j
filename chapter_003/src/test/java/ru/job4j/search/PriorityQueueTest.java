@@ -11,18 +11,18 @@ import static org.hamcrest.core.Is.is;
  * согласно приоритету задачи в порядке уменьшения приоритетности.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
- * @version 0.1
+ * @version 0.2
  * @since 13.05.2020
  */
 public class PriorityQueueTest {
     @Test
     public void whenHigherPriority() {
-        PriorityQueue queue = new PriorityQueue();
+        var queue = new PriorityQueue();
         queue.put(new Task("extra", 2));
         queue.put(new Task("low", 5));
         queue.put(new Task("urgent", 1));
         queue.put(new Task("middle", 3));
-        Task result = queue.take();
+        var result = queue.take();
         assertThat(result.getDescription(), is("urgent"));
     }
 }

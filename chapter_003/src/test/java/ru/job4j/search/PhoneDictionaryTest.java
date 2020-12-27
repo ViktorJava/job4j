@@ -12,13 +12,13 @@ import static org.hamcrest.core.Is.is;
  * Тест поиска имени в телефонном справочнике.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
- * @version 0.1
+ * @version 0.2
  * @since 12.05.2020
  */
 public class PhoneDictionaryTest {
     @Test
     public void whenFindByName() {
-        PhoneDictionary phones = new PhoneDictionary();
+        var phones = new PhoneDictionary();
         phones.add(new Person("Petr", "Arsentev",
                 "534872", "Bryansk")
         );

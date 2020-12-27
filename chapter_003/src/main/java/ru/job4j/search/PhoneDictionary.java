@@ -10,7 +10,7 @@ import java.util.function.Predicate;
  * Модель справочника.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
- * @version 0.3
+ * @version 0.4
  * @since 12.05.2020
  */
 public class PhoneDictionary {
@@ -34,7 +34,7 @@ public class PhoneDictionary {
     public ArrayList<Person> find(String key) {
         Predicate<Person> combine = t -> t.getName().contains(key);
         ArrayList<Person> result = new ArrayList<>();
-        for (Person person : persons) {
+        for (var person : persons) {
             if (combine
                     .or(t -> t.getAddres().contains(key))
                     .or(t -> t.getPhone().contains(key))

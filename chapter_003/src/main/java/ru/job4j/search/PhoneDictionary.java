@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.function.Predicate;
 
 /**
- * Телефонный справочник на базе ArrayList.
+ * <h2>Телефонный справочник на базе ArrayList.</h2>
  * Поиск ключа в списке реализован на лямбде и
- * функциональном интерфейсе.
- * Модель справочника.
+ * функциональном интерфейсе.<p>
+ * Модель справочника.<p>
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
  * @version 0.4
@@ -19,7 +19,7 @@ public class PhoneDictionary {
     /**
      * Добавить персону в справочник.
      *
-     * @param person персона добавляемая в справочник.
+     * @param person Person. Персона добавляемая в справочник.
      */
     public void add(Person person) {
         this.persons.add(person);
@@ -28,8 +28,8 @@ public class PhoneDictionary {
     /**
      * Вернуть список всех пользователей, которые содержат key в любых полях.
      *
-     * @param key Ключ поиска.
-     * @return Список пользователей.
+     * @param key String. Ключ поиска.
+     * @return Person. Список пользователей.
      */
     public ArrayList<Person> find(String key) {
         Predicate<Person> combine = t -> t.getName().contains(key);

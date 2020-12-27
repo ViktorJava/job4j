@@ -3,6 +3,7 @@ package ru.job4j.search;
 import java.util.LinkedList;
 
 /**
+ * <h2>Очередь с приоритетом на LinkedList [#173440].</h2>
  * Очередь с приоритетами - это коллекция,
  * в которой элементы при добавлении
  * располагаются в определенном порядке.
@@ -18,9 +19,9 @@ public class PriorityQueue {
     /**
      * Метод должен вставлять в нужную позицию элемент.
      * Позицию определять по полю приоритет.
-     * Для вставки использовать add(int index, E value).
+     * Для вставки использовать {@code add(int index, E value)}.
      *
-     * @param task Добавляемая задача.
+     * @param task Task. Добавляемая задача.
      */
     public void put(Task task) {
         var index = 0;
@@ -37,7 +38,7 @@ public class PriorityQueue {
     /**
      * Метод возвращает первый элемент из списка и удаляет его.
      *
-     * @return первый элемент из списка.
+     * @return Task. Первый элемент из списка.
      */
     public Task take() {
         return tasks.poll();

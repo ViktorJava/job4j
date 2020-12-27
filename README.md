@@ -1,4 +1,4 @@
-# Программист Вдовиченко Виктора
+# Программист Вдовиченко Виктор
 Начал стажировку на курсе Java разработчика http://job4j.ru 
 Ниже перечислены проекты, реализованые мной во время стажировки. 
 Проекты будут добавляться по мере реализации.
@@ -49,13 +49,40 @@
 * доработка существующего проекта "Шахматы". 
 [Git](https://github.com/ViktorJava/games_oop_javafx)
 
+[chapter_003](https://github.com/ViktorJava/job4j/tree/master/chapter_003) - Collections Framework. 
+
+**Задания выполненные в процессе прохождения блока:**
+* телефонный справочник на базе ArrayList. 
+* очередь с приоритетом на LinkedList.
+* конвертация ArrayList в двухмерный массив.
+* конвертация двумерного массива в ArrayList.
+* Generics.
+* внедрение Collections in Tracker project.
+* преобразования List в Map.
+* сортировка в коллекциях.
+* JaCoCo. Процент покрытие тестами.
+* Travis CI.
+* peer review and code review.
+* разработка модели для банковской системы.
+
+[chapter_004](https://github.com/ViktorJava/job4j/tree/master/chapter_004) - FP, Labmda, Stream API.
+
+**Задания выполненные в процессе прохождения блока:**
+* Labmda. 
+* функции высшего порядка. 
+* внедрение Consumer в Tracker project.
+* Stream API.
+* проект: список адресов в тур.компании. 
+* проект: фильтрация учеников.
+* **Jdk 1.9, 1.10** Нововведения.
+
 ## Инструменты
 ![Algorithm schema](./images/title.png) 
 	
 ## [Лицензия](https://github.com/ViktorJava/job4j/tree/master/LICENSE)
-MIT 
+MIT
 
-**Free Software, Hell Yeah!**
+<mark>Free Software, Hell Yeah!</mark>
 
 ---
 

@@ -2,10 +2,10 @@ package ru.job4j.collection;
 
 import org.junit.Test;
 
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.lessThan;
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
 
 /**
  * Тесты самодельного компаратора двух строк.
@@ -48,7 +48,7 @@ public class StringCompareTest {
         assertThat(rst, greaterThan(0));
     }
 
-    // Left меньше right (по длинне)
+    // Left меньше right (по длине)
     @Test
     public void whenLeftLessThanRightResultShouldBeNegative() {
         StringCompare compare = new StringCompare();

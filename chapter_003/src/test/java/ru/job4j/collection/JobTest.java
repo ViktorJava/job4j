@@ -4,9 +4,9 @@ import org.junit.Test;
 
 import java.util.Comparator;
 
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.lessThan;
-import static org.junit.Assert.assertThat;
 
 /**
  * Тесты компараторов.
@@ -19,7 +19,8 @@ public class JobTest {
     // name по убыванию затем сравнивая priority по убыванию.
     @Test
     public void whenCompatorByNameAndPrority() {
-        Comparator<Job> cmpNamePriority = new JobDescByName().thenComparing(new JobDescByPriority());
+        Comparator<Job> cmpNamePriority = new JobDescByName()
+                .thenComparing(new JobDescByPriority());
         int rsl = cmpNamePriority.compare(
                 new Job("Impl task", 0),
                 new Job("Fix bug", 1)
@@ -30,7 +31,8 @@ public class JobTest {
     // priority по возрастанию затем сравнивая name по убыванию.
     @Test
     public void whenCompatorByPriorityAndName() {
-        Comparator<Job> cmpPriorityName = new JobAscByPriority().thenComparing(new JobDescByName());
+        Comparator<Job> cmpPriorityName = new JobAscByPriority()
+                .thenComparing(new JobDescByName());
         int rsl = cmpPriorityName.compare(
                 new Job("Impl task", 1),
                 new Job("Fix bug", 0)
@@ -71,7 +73,7 @@ public class JobTest {
         assertThat(rsl, lessThan(0));
     }
 
-    // priprity по убыванию
+    // priority по убыванию
     @Test
     public void whenCompatorDescByPrioruty() {
         Comparator<Job> cmpDescByPriority = new JobDescByPriority();

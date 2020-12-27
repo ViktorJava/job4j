@@ -2,8 +2,8 @@ package ru.job4j.collection;
 
 import org.junit.Test;
 
-import static org.hamcrest.Matchers.*;
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.is;
 
 /**
  * @author ViktorJava (gipsyscrew@gmail.com)

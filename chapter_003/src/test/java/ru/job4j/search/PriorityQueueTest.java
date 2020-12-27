@@ -2,11 +2,12 @@ package ru.job4j.search;
 
 import org.junit.Test;
 
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
+
 
 /**
- * Тест того случая, когда задачи отсортируются в связанном списке,
+ * Тест того случая, когда задачи от сортируются в связанном списке,
  * согласно приоритету задачи в порядке уменьшения приоритетности.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)

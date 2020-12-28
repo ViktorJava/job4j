@@ -4,10 +4,11 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * Optional. Методы of() и empty().
+ * <h2>Optional. Методы of() и empty().</h2>
+ *
  * Написать метод поиска строки среди списка строк.
- * Если значение найдено, то нужно вернуть Optional из этого значения,
- * в противном случае вернуть пустой Optional.
+ * Если значение найдено, то нужно вернуть {@link Optional} из этого значения,
+ * в противном случае вернуть пустой {@link Optional}.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
  * @version 0.1

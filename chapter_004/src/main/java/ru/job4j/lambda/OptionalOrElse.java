@@ -15,7 +15,7 @@ public class OptionalOrElse {
      * Метод возвращает значение Optionals или -1 если
      * Optionals empty.
      *
-     * @param optional Опшинс.
+     * @param optional Optional.
      * @return Значение Optionals или -1 если пусто.
      */
     public static Integer orElse(Optional<Integer> optional) {

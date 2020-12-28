@@ -3,8 +3,8 @@ package ru.job4j.lambda;
 import java.util.function.Function;
 
 /**
- * Method reference и Function.
- * Создание Function, через ссылку на метод.
+ * <h2>Method reference и Function.</h2>
+ * Создание {@link Function}, через ссылку на метод.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
  * @version 0.1

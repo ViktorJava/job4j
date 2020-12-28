@@ -12,8 +12,8 @@ import java.util.Optional;
 public class OptionalGetAndIsPresent {
 
     /**
-     * В методе get() нужно вызвать метод indexOf().
-     * Если вернулся пустой Optional, то метод должен вернуть -1,
+     * В методе {@code get()} нужно вызвать метод {@code }indexOf()}.
+     * Если вернулся пустой {@link Optional}, то метод должен вернуть -1,
      * в противном случае сам индекс.
      *
      * @param data Массив данных.
@@ -30,8 +30,8 @@ public class OptionalGetAndIsPresent {
 
     /**
      * Метод ищет индекс по значению. Если индекс не найден,
-     * должно вернуться Optional.empty().
-     * Если найден, то Optional из этого индекса.
+     * должно вернуться {@code Optional.empty()}.
+     * Если найден, то {@link Optional} из этого индекса.
      *
      * @param data Массив данных.
      * @param el   Разыскиваемый элемент.

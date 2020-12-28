@@ -3,7 +3,8 @@ package ru.job4j.lambda;
 import java.util.Optional;
 
 /**
- * Optional. Метод ifPresent()
+ * <h2>Optional. Метод ifPresent()</h2>
+ *
  * Иногда нужно при нахождении {@link Optional} выполнить какое-то действие.
  * Для этого существует метод ifPresent(), он принимает Consumer,
  * который будет выполнен, если значение {@link Optional} не пустое.

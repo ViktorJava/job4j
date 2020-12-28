@@ -3,7 +3,9 @@ package ru.job4j.lambda;
 import java.util.function.Function;
 
 /**
- * Function. Рассчитать значение по формуле num * num + 2 * num + 1.
+ * <h2>Function.</h2>
+ *
+ * Рассчитать значение по формуле num * num + 2 * num + 1.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
  * @version 0.1
@@ -24,7 +26,7 @@ public class FunctionFormula {
      * Метод, с лямбдой, как аргумент.
      *
      * @param y Лямбда расчёта числа по формуле.
-     * @param x Расчитываемое число по формуле.
+     * @param x Посчитываемое число по формуле.
      * @return Функция перехода объекта типа х к объекту типа y.
      */
     private static double calculate(Function<Double, Double> y, double x) {

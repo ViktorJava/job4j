@@ -2,11 +2,12 @@ package ru.job4j.lambda;
 
 import org.junit.Test;
 
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
+
 
 /**
- * Тесты компораторов строк через лямбда выражения.
+ * Тесты компараторов строк через лямбда выражения.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
  * @version 0.1

@@ -10,6 +10,9 @@ package ru.job4j.factory;
 public class Main {
     public static void main(String[] args) {
         WeaponFactory weaponFactory = new WeaponFactory();
-        RandomWeapon.shotRandomWeapon(weaponFactory);
+        for (int i = 0; i < 100; i++) {
+            RandomWeapon.shotRandomWeapon(weaponFactory);
+        }
+        weaponFactory.printCount();
     }
 }

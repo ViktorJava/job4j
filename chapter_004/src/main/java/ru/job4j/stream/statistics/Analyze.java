@@ -23,7 +23,11 @@ public class Analyze {
      * @return Общий средний балл.
      */
     public static double averageScore(Stream<Pupil> stream) {
-        return 0D;
+        return stream.flatMap(x -> x.getSubjects()
+                                    .stream())
+                     .mapToInt(Subject::getScore)
+                     .average()
+                     .orElse(-1);
     }
 
     /**

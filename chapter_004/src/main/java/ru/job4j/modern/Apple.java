@@ -10,20 +10,20 @@ import java.util.Objects;
  * @since 08.01.2021
  */
 public class Apple {
-    private final String color;
+    private final Color color;
     private final int weight;
 
-    public String getColor() {
-        return color;
+    public Apple(Color color, int weight) {
+        this.color = color;
+        this.weight = weight;
     }
 
     public int getWeight() {
         return weight;
     }
 
-    public Apple(String color, int weight) {
-        this.color = color;
-        this.weight = weight;
+    public Color getColor() {
+        return color;
     }
 
     @Override

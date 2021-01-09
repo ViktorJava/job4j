@@ -51,6 +51,55 @@ public class FilteringApplesTest {
                 new Apple("red", 80)
         );
         List<Apple> result = FilteringApples.filteringWeightApples(inventory);
-        assertThat(result,is(expected));
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void whenWeightAppleMore80() {
+        List<Apple> in = Arrays.asList(
+                new Apple("green", 100),
+                new Apple("green", 120),
+                new Apple("blue", 10),
+                new Apple("red", 80)
+        );
+        List<Apple> expected = Arrays.asList(
+                new Apple("green", 100),
+                new Apple("green", 120)
+        );
+        List<Apple> result = FilteringApples.filterApples(in,
+                (Apple a) -> a.getWeight() > 80);
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void whenColorEqualsBlue() {
+        List<Apple> in = Arrays.asList(
+                new Apple("green", 100),
+                new Apple("green", 120),
+                new Apple("blue", 10),
+                new Apple("red", 80)
+        );
+        List<Apple> expected = Arrays.asList(
+                new Apple("blue", 10)
+        );
+        List<Apple> result = FilteringApples.filterApples(in,
+                FilteringApples::isBlueApple);
+        assertThat(result, is(expected));
+    }
+
+    @Test
+    public void test() {
+        List<Apple> in = Arrays.asList(
+                new Apple("green", 100),
+                new Apple("green", 120),
+                new Apple("blue", 10),
+                new Apple("red", 80)
+        );
+        List<Apple> expected = Arrays.asList(
+                new Apple("green", 120)
+        );
+        List<Apple> result = FilteringApples.filterApples(in,
+                FilteringApples::isHeavyApple);
+        assertThat(result, is(expected));
     }
 }

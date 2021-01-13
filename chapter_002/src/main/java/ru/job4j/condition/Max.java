@@ -25,7 +25,7 @@ public class Max {
      *
      * @param first  первое число
      * @param second второе число
-     * @param third  третее число
+     * @param third  третье число
      * @return максимальное из двух чисел.
      */
     public static int max(int first, int second, int third) {
@@ -37,7 +37,7 @@ public class Max {
      *
      * @param first  первое число
      * @param second второе число
-     * @param third  третее число
+     * @param third  третье число
      * @param fourth четвёртое число
      * @return максимальное из двух чисел.
      */

@@ -17,23 +17,18 @@ import static org.hamcrest.core.Is.is;
 public class EasyStreamTest {
     @Test
     public void whenEmptySource() {
-        var rsl = EasyStream.of(List.of());
+        var rsl = EasyStream
+                .of(List.of())
+                .collect();
         assertThat(rsl, is(List.of()));
     }
 
     @Test
     public void whenFilledSource() {
-        var rsl = EasyStream.of(List.of(1, 2, 3));
-        assertThat(rsl, is(List.of(1, 2, 3)));
-    }
-
-    @Test
-    public void whenFilteredSource() {
         var rsl = EasyStream
                 .of(List.of(1, 2, 3))
-                .filter(e -> e == 2)
                 .collect();
-        assertThat(rsl, is(List.of(2)));
+        assertThat(rsl, is(List.of(1, 2, 3)));
     }
 
     @Test
@@ -43,6 +38,15 @@ public class EasyStreamTest {
                 .map(e -> e * 2)
                 .collect();
         assertThat(rsl, is(List.of(2, 4, 6)));
+    }
+
+    @Test
+    public void whenFilteredSource() {
+        var rsl = EasyStream
+                .of(List.of(1, 2, 3))
+                .filter(e -> e == 2)
+                .collect();
+        assertThat(rsl, is(List.of(2)));
     }
 
     @Test

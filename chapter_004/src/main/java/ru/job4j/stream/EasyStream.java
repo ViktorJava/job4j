@@ -18,8 +18,8 @@ import java.util.function.Predicate;
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
  * @version 0.1
- * @implNote В этом задании нужно использовать шаблон Builder.
- * Реализовать класс {@link EasyStream}. Проверить реализацию тестами.
+ * @implNote В этом задании нужно: <li>Использовать шаблон проектирования Builder.
+ * <li>Реализовать класс {@link EasyStream}. <li>Проверить реализацию тестами.
  * @since 17.01.2021
  */
 public class EasyStream {
@@ -47,6 +47,10 @@ public class EasyStream {
      */
     public EasyStream map(Function<Integer, Integer> fun) {
         List<Integer> list = new ArrayList<>();
+        for (Integer element: source) {
+            fun.apply(element);
+            list.add(fun.apply(element));
+        }
         return new EasyStream(list);
     }
 
@@ -58,13 +62,18 @@ public class EasyStream {
      */
     public EasyStream filter(Predicate<Integer> fun) {
         List<Integer> list = new ArrayList<>();
+        for (Integer element: source) {
+            if (fun.test(element)) {
+                list.add(element);
+            }
+        }
         return new EasyStream(list);
     }
 
     /**
      * Метод собирает все элементы из source по заданным условиям map и filter.
      *
-     * @return Список данных целочисленного типа.
+     * @return Массив чисел целочисленного типа.
      */
     public List<Integer> collect() {
         return new ArrayList<>(source);

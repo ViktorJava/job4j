@@ -48,7 +48,7 @@ public class EasyStream {
     public EasyStream map(Function<Integer, Integer> fun) {
         List<Integer> list = new ArrayList<>();
         for (Integer element: source) {
-            fun.apply(element);
+            //fun.apply(element);
             list.add(fun.apply(element));
         }
         return new EasyStream(list);

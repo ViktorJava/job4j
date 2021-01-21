@@ -12,21 +12,18 @@ import static org.hamcrest.core.Is.is;
 public class MaxTest {
     @Test
     public void firstMax() {
-        Max max = new Max();
         int result = Max.max(3, 1);
         assertThat(result, is(3));
     }
 
     @Test
     public void secondMax() {
-        Max max = new Max();
         int result = Max.max(1, 6);
         assertThat(result, is(6));
     }
 
     @Test
     public void firstEqualSecond() {
-        Max max = new Max();
         int result = Max.max(9, 9);
         assertThat(result, is(9));
     }

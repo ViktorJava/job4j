@@ -2,8 +2,8 @@ package ru.job4j.condition;
 
 import org.junit.Test;
 
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.number.IsCloseTo.closeTo;
-import static org.junit.Assert.*;
 
 /**
  * @author Created by ViktorJava on 26.08.2019 (gipsyscrew@gmail.com)

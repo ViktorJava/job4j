@@ -1,9 +1,14 @@
 package ru.job4j.stream.statistics;
 
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import static java.util.stream.Collectors.*;
+
 /**
+ * <h2>Крестики-нолики на JavaFX [#173333]</h2>
  * Класс Analyze получает статистику по аттестатам.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
@@ -12,7 +17,7 @@ import java.util.stream.Stream;
  */
 public class Analyze {
     /**
-     * <h2>Метол вычисляет общий средний балл.</h2>
+     * <h2>Метод вычисляет общий средний балл.</h2>
      * <li> {@code flatMap()} для преобразования в поток объектов {@link Subject}
      * <li> {@code mapToInt()} для последующего преобразования в поток оценок по
      * каждому предмету;
@@ -23,11 +28,11 @@ public class Analyze {
      * @return Общий средний балл.
      */
     public static double averageScore(Stream<Pupil> stream) {
-        return stream.flatMap(x -> x.getSubjects()
-                                    .stream())
-                     .mapToInt(Subject::getScore)
-                     .average()
-                     .orElse(-1);
+        return stream
+                .flatMap(x -> x.getSubjects().stream())
+                .mapToInt(Subject::getScore)
+                .average()
+                .orElse(0D);
     }
 
     /**
@@ -49,7 +54,14 @@ public class Analyze {
      * @return Список объектов типа {@link Tuple}
      */
     public static List<Tuple> averageScoreBySubject(Stream<Pupil> stream) {
-        return List.of();
+        return stream
+                .map(s -> new Tuple(s.getName(), s
+                        .getSubjects()
+                        .stream()
+                        .mapToInt(Subject::getScore)
+                        .average()
+                        .orElse(0D)))
+                .collect(toList());
     }
 
     /**
@@ -79,7 +91,15 @@ public class Analyze {
      * @return Список объектов типа {@link Tuple}
      */
     public static List<Tuple> averageScoreByPupil(Stream<Pupil> stream) {
-        return List.of();
+        return stream
+                .flatMap(pupil -> pupil.getSubjects().stream())
+                .collect(groupingBy(Subject::getName,
+                        averagingDouble(Subject::getScore)))
+                .entrySet()
+                .stream()
+                .sorted((k, v) -> v.getKey().compareTo(k.getKey()))
+                .map(v -> new Tuple(v.getKey(), v.getValue()))
+                .collect(toList());
     }
 
     /**
@@ -99,7 +119,15 @@ public class Analyze {
      * @return Лучший ученик, с наибольшим баллом по всем предметам.
      */
     public static Tuple bestStudent(Stream<Pupil> stream) {
-        return null;
+        return stream
+                .map(pupil -> new Tuple(pupil.getName(), pupil
+                        .getSubjects()
+                        .stream()
+                        .mapToInt(Subject::getScore)
+                        .sum()))
+                .max(Comparator.comparing(Tuple::getScore))
+                .orElse(null);
+
     }
 
     /**
@@ -123,6 +151,14 @@ public class Analyze {
      * @return Предмет с наибольшим баллом для всех студентов.
      */
     public static Tuple bestSubject(Stream<Pupil> stream) {
-        return null;
+        return stream
+                .flatMap(pupil -> pupil.getSubjects().stream())
+                .collect(Collectors.groupingBy(Subject::getName,
+                        Collectors.summingDouble(Subject::getScore)))
+                .entrySet()
+                .stream()
+                .map(e -> new Tuple(e.getKey(), e.getValue()))
+                .max(Comparator.comparing(Tuple::getScore))
+                .orElse(null);
     }
 }

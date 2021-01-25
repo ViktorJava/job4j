@@ -14,16 +14,17 @@ import static org.hamcrest.core.Is.is;
  * @version 0.1
  * @since 02.01.2021
  */
-public class AnalizeTest {
+
+public class AnalyzeTest {
     /**
      * Средний балл, когда один ученик.
      */
     @Test
     public void whenSinglePupil() {
-        double average = Analyze.averageScore(List.of(
-                new Pupil("Ivanov", List.of(
-                        new Subject("Math", 100))))
-                                                  .stream());
+        double average = Analyze.averageScore(List
+                .of(new Pupil("Ivanov", List
+                        .of(new Subject("Math", 100))))
+                .stream());
         assertThat(average, is(100D));
     }
 
@@ -54,12 +55,13 @@ public class AnalizeTest {
                                 new Subject("Math", 100),
                                 new Subject("Lang", 100))),
                         new Pupil("Petrov", List.of(
-                                new Subject("Math", 100),
-                                new Subject("Lang", 80))))
-                    .stream());
+                                new Subject("Math", 60),
+                                new Subject("Lang", 60)))
+                ).stream()
+        );
         assertThat(average, is(List.of(
                 new Tuple("Ivanov", 100D),
-                new Tuple("Petrov", 80D)
+                new Tuple("Petrov", 60D)
         )));
     }
 
@@ -72,14 +74,14 @@ public class AnalizeTest {
                 List.of(
                         new Pupil("Ivanov", List.of(
                                 new Subject("Math", 100),
-                                new Subject("Lang", 100))),
+                                new Subject("Lang", 70))),
                         new Pupil("Petrov", List.of(
                                 new Subject("Math", 60),
-                                new Subject("Lang", 60))))
+                                new Subject("Lang", 80))))
                     .stream());
         assertThat(average, is(List.of(
                 new Tuple("Math", 80D),
-                new Tuple("Lang", 80D)
+                new Tuple("Lang", 75D)
         )));
     }
 
@@ -92,12 +94,12 @@ public class AnalizeTest {
                 List.of(
                         new Pupil("Ivanov", List.of(
                                 new Subject("Math", 100),
-                                new Subject("Lang", 100))),
+                                new Subject("Lang", 10))),
                         new Pupil("Petrov", List.of(
                                 new Subject("Math", 60),
                                 new Subject("Lang", 60))))
                     .stream());
-        assertThat(best, is(List.of(new Tuple("Ivanov", 200D))));
+        assertThat(best, is(new Tuple("Petrov", 120D)));
     }
 
     /**
@@ -113,8 +115,7 @@ public class AnalizeTest {
                         new Pupil("Petrov", List.of(
                                 new Subject("Math", 60),
                                 new Subject("Lang", 60))))
-                    .stream()
-        );
-        assertThat(best, is(List.of(new Tuple("Math", 160D))));
+                    .stream());
+        assertThat(best, is(new Tuple("Math", 160D)));
     }
 }

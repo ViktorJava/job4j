@@ -31,10 +31,9 @@ public class Profiles {
      * @return Список адресов.
      */
     public static List<Adress> collect(List<Profile> profiles) {
-        List<Adress> list = profiles.stream()
-                                    .map(Profile::getAdress)
-                                    .collect(Collectors.toList());
-        return list;
+        return profiles.stream()
+                       .map(Profile::getAdress)
+                       .collect(Collectors.toList());
     }
 
     /**

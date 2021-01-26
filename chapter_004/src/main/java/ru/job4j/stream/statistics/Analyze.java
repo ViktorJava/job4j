@@ -1,6 +1,7 @@
 package ru.job4j.stream.statistics;
 
 import java.util.Comparator;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -93,11 +94,10 @@ public class Analyze {
     public static List<Tuple> averageScoreByPupil(Stream<Pupil> stream) {
         return stream
                 .flatMap(pupil -> pupil.getSubjects().stream())
-                .collect(groupingBy(Subject::getName,
+                .collect(groupingBy(Subject::getName, LinkedHashMap::new,
                         averagingDouble(Subject::getScore)))
                 .entrySet()
                 .stream()
-                .sorted((k, v) -> v.getKey().compareTo(k.getKey()))
                 .map(v -> new Tuple(v.getKey(), v.getValue()))
                 .collect(toList());
     }

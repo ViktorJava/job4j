@@ -1,7 +1,7 @@
 package ru.job4j.array;
 
 /**
- * ТЗ [#173369]:заполнить массив степенями чисел.
+ * Заполнить массив степенями чисел.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
  * @version 0.1
@@ -14,11 +14,18 @@ public class Square {
      * @param bound размер массива
      * @return результат
      */
-    public int[] calculate(int bound) {
+    public static int[] calculate(int bound) {
         int[] rst = new int[bound];
-        for (int index = 0; index < bound; index++) {
+        for (int index = 0; index < rst.length; index++) {
             rst[index] = (index + 1) * (index + 1);
         }
         return rst;
+    }
+
+    public static void main(String[] args) {
+        int[] array = calculate(4);
+        for (int i: array) {
+            System.out.println(i);
+        }
     }
 }

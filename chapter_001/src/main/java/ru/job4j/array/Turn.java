@@ -1,7 +1,7 @@
 package ru.job4j.array;
 
 /**
- * ТЗ [#173379]:перевернуть массив.
+ * Перевернуть массив.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
  * @version 0.1
@@ -14,7 +14,7 @@ public class Turn {
      * @param array массив для переворачивания
      * @return перевёрнутый массив
      */
-    public int[] back(int[] array) {
+    public static int[] back(int[] array) {
         for (int i = 0; i < array.length / 2; i++) {
             int temp = array[i];
             array[i] = array[array.length - i - 1];

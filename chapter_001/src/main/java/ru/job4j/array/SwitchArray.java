@@ -1,13 +1,28 @@
 package ru.job4j.array;
 
 /**
- * Выход за границу массива.
+ * Переставить местами элементы массива.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
  * @version 0.1
  * @since 13.06.2021
  */
 public class SwitchArray {
+    /**
+     * Метод меняет местами произвольные элементы.
+     *
+     * @param array  Массив целых чисел.
+     * @param source Источник.
+     * @param dest   Получатель.
+     * @return Результирующий массив.
+     */
+    public static int[] swap(int[] array, int source, int dest) {
+        int temp = array[source];
+        array[source] = array[dest];
+        array[dest] = temp;
+        return array;
+    }
+
     /**
      * Метод меняет местами нулевой и последний элементы в массиве.
      *

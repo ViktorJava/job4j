@@ -16,9 +16,9 @@ public class Min {
      */
     public static int findMin(int[] array) {
         var min = array[0];
-        for (var j: array) {
-            if (min > j) {
-                min = j;
+        for (int i = 1; i < array.length; i++) {
+            if (min > array[i]) {
+                min = array[i];
             }
         }
         return min;

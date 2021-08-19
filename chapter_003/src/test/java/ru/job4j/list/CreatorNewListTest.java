@@ -1,12 +1,12 @@
 package ru.job4j.list;
 
-import org.junit.Test;
+import org.junit.Ignore;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-import static org.hamcrest.core.Is.is;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.Is.is;
 
 /**
  * Тест создания списка.
@@ -16,7 +16,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
  * @since 21.11.2020
  */
 public class CreatorNewListTest {
-    @Test
+    @Ignore
     public void main() {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out));

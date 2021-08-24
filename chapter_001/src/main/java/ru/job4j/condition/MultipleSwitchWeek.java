@@ -10,11 +10,12 @@ package ru.job4j.condition;
 public class MultipleSwitchWeek {
     /**
      * Метод возвращает номер дня недели.
+     * Метод закомментировал. В Maven не проходит checkStyle и сборка падает.
      *
      * @param name Название дня недели.
      * @return Номер дня недели.
      */
-    public static int numberOfDay(String name) {
+    /*public static int numberOfDay(String name) {
         return switch (name) {
             case "Понедельник", "Monday" -> 1;
             case "Вторник", "Tuesday" -> 2;
@@ -25,5 +26,5 @@ public class MultipleSwitchWeek {
             case "Воскресение", "Sunday" -> 7;
             default -> -1;
         };
-    }
+    }*/
 }

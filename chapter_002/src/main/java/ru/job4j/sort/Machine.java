@@ -12,16 +12,22 @@ import java.util.Arrays;
  * Его смысл очень прост. Мы берем монету наибольшего номинала - 10.
  * Далее вычитаем из суммы. Если остаток больше 0 то операцию повторяем.
  * Если меньше, то берем монету номиналом меньше.
- * И так пока не дойдет до монеты в 1 рубль. В помощью нее мы добиваем остаток.
+ * И так пока не дойдет до монеты в 1 рубль. С помощью её мы добиваем остаток.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
- * @version 0.1
+ * @version 0.2
  * @since 09.04.2020
  */
 public class Machine {
-    private final int[] coins = {10, 5, 2, 1};
-
-    public int[] change(int money, int price) {
+    /**
+     * Метод расчёта сдачи в кофе машине.
+     *
+     * @param money Купюра.
+     * @param price Цена.
+     * @return Сдача в монетах.
+     */
+    public static int[] change(int money, int price) {
+        int[] coins = {10, 5, 2, 1};
         int[] rsl = new int[100];
         int size = 0;
         int delta = money - price;

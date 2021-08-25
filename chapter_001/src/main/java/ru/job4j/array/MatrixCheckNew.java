@@ -26,4 +26,23 @@ public class MatrixCheckNew {
         }
         return result;
     }
+
+    /**
+     * Метод проверяет элементы в заданном столбце массива, что они
+     * равны символу 'X'.
+     *
+     * @param board  Массив символов.
+     * @param column Проверяемый столбец массива.
+     * @return rue если заданный столбец массива, целиком заполнен символами 'Х'.
+     */
+    public static boolean monoVertical(char[][] board, int column) {
+        boolean result = true;
+        for (int i = 0; i < board[column].length; i++) {
+            if (board[i][column] != 'X') {
+                result = false;
+                break;
+            }
+        }
+        return result;
+    }
 }

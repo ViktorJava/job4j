@@ -5,7 +5,7 @@ import org.junit.Test;
 
 
 /**
- * Тесты метода проверки элементов в заданной строке массива, что они
+ * Тесты проверки элементов в массиве, что они
  * равны символу 'X'.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
@@ -22,6 +22,18 @@ public class MatrixCheckNewTest {
         };
         int row = 1;
         boolean result = MatrixCheckNew.monoHorizontal(input, row);
+        Assert.assertTrue(result);
+    }
+
+    @Test
+    public void whenHasMonoVertical() {
+        char[][] input = {
+                {' ', ' ', 'X'},
+                {' ', ' ', 'X'},
+                {' ', ' ', 'X'},
+        };
+        int column = 2;
+        boolean result = MatrixCheckNew.monoVertical(input, column);
         Assert.assertTrue(result);
     }
 }

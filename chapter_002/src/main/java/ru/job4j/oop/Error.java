@@ -13,11 +13,9 @@ public class Error {
     private String message;
 
     public Error() {
-        System.out.println("--Default constructor");
     }
 
     public Error(boolean active, int status, String message) {
-        System.out.println("\n--Parameterized constructor");
         this.active = active;
         this.status = status;
         this.message = message;
@@ -28,11 +26,13 @@ public class Error {
         error.printInfo();
         Error errorFatal = new Error(true, 127,
                 "Fatal error detected, unable to continue.");
+        Error ioError = new Error(false, 9298,
+                "I/O System Error.");
         errorFatal.printInfo();
+        ioError.printInfo();
     }
 
     public void printInfo() {
-
         System.out.println("Error status: " + status);
         System.out.println("active: " + active);
         System.out.println("message: " + message);

@@ -44,6 +44,12 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.2.0</version>
+            </plugin>
+
             <!-- Плагин покрытия проектов, тестами. -->
             <plugin>
                 <groupId>org.jacoco</groupId>

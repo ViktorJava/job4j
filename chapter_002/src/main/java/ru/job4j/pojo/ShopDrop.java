@@ -17,7 +17,6 @@ public class ShopDrop {
      * @return Массив типа Product c удалённым элементом.
      */
     public static Product[] delete(Product[] product, int index) {
-        product[index] = null;
         for (int i = index; i < product.length - 1; i++) {
             product[i] = product[i + 1];
         }

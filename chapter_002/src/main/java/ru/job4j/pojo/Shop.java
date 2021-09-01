@@ -15,7 +15,7 @@ public class Shop {
      * @return Индекс первой пустой ячейки массива, -1 при отсутствии таковой.
      */
     public static int indexOfNull(Product[] products) {
-        for (int i = 0; i < products.length - 1; i++) {
+        for (int i = 0; i < products.length; i++) {
             if (products[i] == null) {
                 return i;
             }

@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 /**
- * Чтение из консоли. Класс Scanner. [#179514]
+ * Чтение из консоли. Класс Scanner. [#179514 #199340]
  * 1. Создайте класс ru.job4j.io.MagicBall.
  * 2. Создайте в нем метод main. В нем попросите пользователя ввести закрытый вопрос.
  * 3. В методе main должен быть объект Scanner для ввода вопроса от пользователя.
@@ -14,14 +14,13 @@ import java.util.Scanner;
  * Во всех остальных случаях напечатать - "Может быть".
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
- * @version 0.1
+ * @version 0.2
  * @since 27.11.2019
  */
 public class MagicBall {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int answer = new Random().nextInt(3); //генерация от нуля до двух
-
+        int answer = new Random().nextInt(3);
         System.out.print("Я великий Оракул, твою мать, что ты хочешь узнать? ");
         String question = scanner.nextLine();
         switch (answer) {
@@ -33,6 +32,7 @@ public class MagicBall {
                 break;
             default:
                 System.out.println("Возможно...");
+                break;
         }
     }
 }

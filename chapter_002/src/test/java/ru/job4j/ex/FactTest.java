@@ -3,7 +3,7 @@ package ru.job4j.ex;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 /**
  * @author ViktorJava (gipsyscrew@gmail.com)
@@ -24,7 +24,7 @@ public class FactTest {
      */
     @Test
     public void calcFact100() {
-        int res = new Fact().cal(100);
+        int res = Fact.cal(100);
         assertThat(res, is(4951));
     }
 }

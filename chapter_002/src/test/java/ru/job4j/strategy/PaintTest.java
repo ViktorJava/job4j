@@ -8,9 +8,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.StringJoiner;
 
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.assertThat;
-
 /**
  * Тестирование класса Paint.
  *
@@ -20,7 +19,7 @@ import static org.junit.Assert.assertThat;
  */
 public class PaintTest {
     // получаем ссылку на стандартный вывод в консоль.
-    private PrintStream stdout = System.out;
+    private final PrintStream stdout = System.out;
     // Создаем буфер для хранения вывода.
     ByteArrayOutputStream out = new ByteArrayOutputStream();
 
@@ -46,7 +45,7 @@ public class PaintTest {
     @Test
     public void whenDrawSquare() {
         // выполняем действия пишущие в консоль.
-        new Paint().draw(new Square());
+        Paint.draw(new Square());
         // проверяем результат вычисления
         assertThat(new String(out.toByteArray()),
                 is(new StringJoiner(System.lineSeparator())
@@ -61,7 +60,7 @@ public class PaintTest {
 
     @Test
     public void whenDrawTriangle() {
-        new Paint().draw(new Triangle());
+        Paint.draw(new Triangle());
         assertThat(new String(out.toByteArray()),
                 is(new StringJoiner(System.lineSeparator())
                         .add("*")

@@ -24,7 +24,7 @@ public class FactTest {
      */
     @Test
     public void calcFact100() {
-        int res = Fact.cal(100);
-        assertThat(res, is(4951));
+        int res = Fact.cal(5);
+        assertThat(res, is(120));
     }
 }

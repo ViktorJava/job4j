@@ -11,19 +11,14 @@ import static org.hamcrest.MatcherAssert.assertThat;
  * @since 07.01.2020
  */
 public class FactTest {
-    /**
-     * Тест на выбрасывание исключения незаконного аргумента (IllegalArgumentException).
-     */
+
     @Test(expected = IllegalArgumentException.class)
-    public void whenArgLessOne() {
+    public void whenArgLess0() {
         int res = Fact.cal(-3);
     }
 
-    /**
-     * Тест расчёта факториала n!=100
-     */
     @Test
-    public void calcFact100() {
+    public void calcFact5() {
         int res = Fact.cal(5);
         assertThat(res, is(120));
     }

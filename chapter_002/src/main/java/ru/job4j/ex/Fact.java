@@ -1,19 +1,13 @@
 package ru.job4j.ex;
 
 /**
- * Класс вычисления факториала.
- * Кидаем исключение - throw new RuntimeException.
+ * Кидаем исключение - throw new RuntimeException [#219365 #199353].
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
- * @version 0.2
+ * @version 0.3
  * @since 07.01.2020
  */
 public class Fact {
-
-    public static void main(String[] args) {
-        System.out.println("Factorial number 100 -> " + cal(5));
-    }
-
     /**
      * Вычисление факториала.
      *

@@ -22,12 +22,12 @@ public class Matches {
             String player = turn ? "Первый игрок" : "Второй игрок";
             System.out.println(player + " введите число от 1 до 3:");
             int matches = Integer.parseInt(input.nextLine());
-            if (matches > 0 && matches <= 3) {
+            if (matches > 0 && matches <= 3 && count - matches >= 0) {
                 turn = !turn;
                 count -= matches;
                 System.out.println("осталось спичек: " + count);
             } else {
-                System.out.println("от 1 до 3 спичек!");
+                System.out.println("Ошибка ввода");
             }
         }
         if (!turn) {

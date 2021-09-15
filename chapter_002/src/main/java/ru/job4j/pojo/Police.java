@@ -14,6 +14,9 @@ public class Police {
         license.setModel("Forza");
         license.setCode("AP7392CO");
         license.setCreated(new Date());
-        System.out.println(license.getOwner() + " владелец автомобиля " + license.getModel() + " номер: " + license.getCode());
+        System.out.println(license.getOwner() + " владелец автомобиля "
+                + license.getModel()
+                + " номер: " + license.getCode()
+        );
     }
 }

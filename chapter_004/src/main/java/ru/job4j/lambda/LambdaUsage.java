@@ -6,6 +6,7 @@ import java.util.List;
 
 /**
  * Лямбда блок [#249208].
+ * Отладочная информация в лямбда блоке.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
  * @version 0.1
@@ -15,7 +16,7 @@ public class LambdaUsage {
     public static void main(String[] args) {
         Comparator<String> cmpDescSize = (left, right) -> {
             System.out.println("compare - " + left + " : " + right);
-            return right.length() - left.length();
+            return Integer.compare(left.length(), right.length());
         };
         List<String> ls = Arrays.asList("four", "one", "three");
         ls.sort(cmpDescSize);

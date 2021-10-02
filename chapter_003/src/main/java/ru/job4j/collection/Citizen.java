@@ -18,19 +18,10 @@ public class Citizen {
         this.username = username;
     }
 
-    @Override
-    public String toString() {
-        return "Citizen{"
-                + "passport='" + passport + '\''
-                + ", username='" + username + '\''
-                + '}';
-    }
-
     public String getPassport() {
         return passport;
     }
 
-    @SuppressWarnings("unused")
     public String getUsername() {
         return username;
     }
@@ -44,7 +35,7 @@ public class Citizen {
             return false;
         }
         Citizen citizen = (Citizen) o;
-        return passport.equals(citizen.passport);
+        return Objects.equals(passport, citizen.passport);
     }
 
     @Override

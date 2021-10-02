@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertFalse;
 
 /**
  * Паспорт и жители [#212656]
@@ -19,5 +20,13 @@ public class PassportOfficeTest {
         PassportOffice office = new PassportOffice();
         office.add(citizen);
         assertThat(office.get(citizen.getPassport()), is(citizen));
+    }
+
+    @Test
+    public void addDuplicates() {
+        Citizen citizen = new Citizen("BA094994", "Viktor Vdovichenko");
+        PassportOffice office = new PassportOffice();
+        office.add(citizen);
+        assertFalse(office.add(citizen));
     }
 }

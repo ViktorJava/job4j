@@ -24,7 +24,8 @@ public class GetOrDefault {
      * Метод добавляющий элемент в store, если такого ключа пока ещё нет
      * в хранилище.
      *
-     * @param list Добавляемый элемент в store.
+     * @param index Индекс добавляемого элемента в хранилище.
+     * @param list  Добавляемый элемент в store.
      */
     public void addValue(int index, List<String> list) {
         if (!store.containsKey(index)) {

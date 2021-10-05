@@ -1,21 +1,20 @@
 package ru.job4j.bank;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Stream;
 
 /**
  * Главный сервис.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
- * @version 0.2
+ * @version 0.3
  * @since 24.05.2020
  */
 public class BankService {
-    //Это поле содержит всех пользователей системы с привязанными к ним счетами.
-    private Map<User, List<Account>> users = new HashMap<>();
+    /**
+     * Это поле содержит всех пользователей системы с привязанными к ним счетами.
+     */
+    private final Map<User, List<Account>> users = new HashMap<>();
 
     /**
      * Это метод должен добавить пользователя в систему.
@@ -51,8 +50,6 @@ public class BankService {
 
     /**
      * Это метод ищет пользователя по номеру паспорта.
-     * Здесь нужно использовать перебор всех элементов
-     * через цикл for-each и метод Map.keySet.
      *
      * @param passport Номер паспорта.
      * @return Клиент банка, которому соответствует паспорт.
@@ -70,12 +67,21 @@ public class BankService {
         return user;
     }
 
-    public User findByPassportStream(String passport) {
-        Stream<User> userStream = users.keySet().stream();
-        return userStream
-                .filter(u -> u.getPassport().equals(passport))
-                .findFirst()
-                .orElse(null);
+    /**
+     * В этом методе создаётся список аккаунтов.
+     * В список аккаунтов, добавляем аккаунты с номером счёта и балансом.
+     * В списке аккаунтов ищем номер счёта и получаем индекс в списке.
+     *
+     * @param args Массив аргументов метода.
+     */
+    public static void main(String[] args) {
+        List<Account> accounts = new ArrayList<>(); // список аккаунтов
+        accounts.add(new Account("3fdsbb9", 140));
+        accounts.add(new Account("3grgb9", 100));
+        String requisite = "3fdsbb9"; // счет
+        int index = accounts.indexOf(new Account(requisite, -1));
+        Account find = accounts.get(index);
+        System.out.println(find.getRequisite() + " -> " + find.getBalance());
     }
 
     /**
@@ -93,7 +99,7 @@ public class BankService {
         User user = findByPassport(passport);
         if (user != null) {
             List<Account> accounts = users.get(user);
-            for (Account currentAccount : accounts) {
+            for (Account currentAccount: accounts) {
                 if (currentAccount.getRequisite().equals(requisite)) {
                     result = currentAccount;
                     break;
@@ -103,16 +109,17 @@ public class BankService {
         return result;
     }
 
-    public Account findByRequisiteStream(String passport, String requisite) {
-        Account result = null;
-        User user = findByPassportStream(passport);
-        if (user != null) {
-            result = users.get(user).stream()
-                    .filter(account -> account.getRequisite().equals(requisite))
-                    .findFirst()
-                    .orElse(null);
-        }
-        return result;
+    /**
+     * Stream версия метода, который ищет пользователя по номеру паспорта.
+     *
+     * @param passport Номер паспорта.
+     * @return Клиент банка, которому соответствует паспорт.
+     */
+    public Optional<User> findByPassportStream(String passport) {
+        Stream<User> userStream = users.keySet().stream();
+        return userStream
+                .filter(u -> u.getPassport().equals(passport))
+                .findFirst();
     }
 
     /**
@@ -140,14 +147,24 @@ public class BankService {
         return result;
     }
 
-    public static void main(String[] args) {
-        List<Account> accounts = new ArrayList<>(); // список аккаунтов
-        String requisite = "3fdsbb9"; // счет
-        accounts.add(new Account("3fdsbb9", 140)); // добавляем аккаунт с номером счёта и балансом
-        accounts.add(new Account("3grgb9", 100)); // добавляем аккаунт с номером счёта и балансом
-        //в списке аккаунтов ищем номер счёта и получаем индекс в списке.
-        int index = accounts.indexOf(new Account(requisite, -1));
-        Account find = accounts.get(index);
-        System.out.println(find.getRequisite() + " -> " + find.getBalance());
+    /**
+     * Stream версия метода, который ищет счет пользователя по реквизитам.
+     * Сначала нужно найти пользователя.
+     * Потом получить список счетов этого пользователя и в нем найти нужный счет.
+     *
+     * @param passport  Номер паспорта.
+     * @param requisite Номер счёта.
+     * @return Аккаунт клиента или null Optional в случае отсутствия.
+     */
+    public Optional<Account> findByRequisiteStream(String passport, String requisite) {
+        Optional<Account> result = Optional.empty();
+        Optional<User> user = findByPassportStream(passport);
+        if (user.isPresent()) {
+            result = users.get(user.get()).stream()
+                          .filter(account -> account.getRequisite()
+                                                    .equals(requisite))
+                          .findFirst();
+        }
+        return result;
     }
 }

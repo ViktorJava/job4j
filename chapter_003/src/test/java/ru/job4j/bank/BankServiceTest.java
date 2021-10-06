@@ -22,7 +22,7 @@ public class BankServiceTest {
         User user = new User("3434", "Petr Arsentev");
         BankService bank = new BankService();
         bank.addUser(user);
-        assertThat(bank.findByPassportStream("3434").get(), is(user));
+        assertThat(bank.findByPassport("3434").get(), is(user));
     }
 
     /**
@@ -34,7 +34,7 @@ public class BankServiceTest {
         BankService bank = new BankService();
         bank.addUser(user);
         bank.addAccount(user.getPassport(), new Account("5546", 150D));
-        assertFalse(bank.findByRequisiteStream("34", "5546").isPresent());
+        assertFalse(bank.findByRequisite("34", "5546").isPresent());
     }
 
     /**
@@ -46,7 +46,7 @@ public class BankServiceTest {
         BankService bank = new BankService();
         bank.addUser(user);
         bank.addAccount(user.getPassport(), new Account("5546", 150D));
-        assertThat(bank.findByRequisiteStream("3434", "5546")
+        assertThat(bank.findByRequisite("3434", "5546")
                        .get()
                        .getBalance(), is(150D));
     }
@@ -62,7 +62,7 @@ public class BankServiceTest {
         bank.addAccount(user.getPassport(), new Account("5546", 150D));
         bank.addAccount(user.getPassport(), new Account("113", 50D));
         bank.transferMoney(user.getPassport(), "5546", user.getPassport(), "113", 150D);
-        assertThat(bank.findByRequisiteStream(user.getPassport(), "113")
+        assertThat(bank.findByRequisite(user.getPassport(), "113")
                        .get()
                        .getBalance(), is(200D));
     }

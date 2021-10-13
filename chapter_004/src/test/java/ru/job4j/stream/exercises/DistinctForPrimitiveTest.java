@@ -1,4 +1,4 @@
-package ru.job4j.stream;
+package ru.job4j.stream.exercises;
 
 import org.junit.Test;
 
@@ -7,7 +7,7 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Тест сбора уникальных чисел массива в списке.
+ * Промежуточные операции. Метод distinct(). Уникальные числа.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
  * @version 0.1

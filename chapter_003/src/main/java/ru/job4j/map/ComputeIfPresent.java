@@ -2,7 +2,6 @@ package ru.job4j.map;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 /**
  * Изменение уже существующей записи в отображении.
@@ -20,7 +19,10 @@ import java.util.Set;
  * @version 0.2
  * @since 03.12.2020
  */
-public class ComputeIfPresent {
+public final class ComputeIfPresent {
+    private ComputeIfPresent() {
+    }
+
     /**
      * Метод вносит изменения в уже существующие записи в отображении.
      *
@@ -29,11 +31,12 @@ public class ComputeIfPresent {
      * @return Отображение с объединёнными фамилией и именем.
      */
     public static Map<Integer, String> collectData(
-            Map<Integer, String> name,
-            Map<Integer, String> surname) {
+            final Map<Integer, String> name,
+            final Map<Integer, String> surname) {
         Map<Integer, String> map = new HashMap<>(name);
-        for (int index : name.keySet()) {
-            map.computeIfPresent(index, (key, value) -> value + " " + surname.get(index));
+        for (int index: name.keySet()) {
+            map.computeIfPresent(index, (key, value) -> value + " "
+                    + surname.get(index));
         }
         return map;
     }

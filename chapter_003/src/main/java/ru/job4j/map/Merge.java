@@ -32,10 +32,13 @@ public final class Merge {
      */
     public static Map<Integer, String> collectData(
             final Map<Integer, String> names, final List<User> users) {
+
         for (User u: users) {
             names.putIfAbsent(u.getId(), u.getName());
-            names.merge(u.getId(), u.getName(), (oldV, newV) -> u.getName()
-                    + " " + u.getSurname());
+            int i = u.getId();
+            String s = u.getSurname();
+            names.merge(u.getId(), u.getSurname(), (oldV, newV) -> oldV
+                    + " " + newV);
         }
         return names;
     }

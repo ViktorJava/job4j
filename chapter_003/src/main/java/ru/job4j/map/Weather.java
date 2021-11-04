@@ -38,18 +38,16 @@ public final class Weather {
      * @return Список объектов типа Info.
      */
     public static List<Info> editData(final List<Info> list) {
-        List<Info> rsl;
         Map<String, Integer> map = new HashMap<>();
         for (Info info: list) {
-            map.computeIfPresent(info.getCity(), (oldV, newV) -> newV + info.getRainfall());
+            map.computeIfPresent(info.getCity(), (k, v) -> v + info.getRainfall());
             map.putIfAbsent(info.getCity(), info.getRainfall());
         }
-        rsl = map
+        return map
                 .keySet()
                 .stream()
                 .map(s -> new Info(s, map.get(s)))
                 .collect(Collectors.toList());
-        return rsl;
     }
 
     static class Info {

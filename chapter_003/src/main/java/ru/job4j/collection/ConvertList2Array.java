@@ -15,7 +15,7 @@ public class ConvertList2Array {
      * в строке. На выходе, получаем двумерный массив типа int,
      * с расчётным количеством строк. В процессе расчёта
      * необходимого массива, возникает дефицит элементов,
-     * котрый компенсируется нулями.
+     * который компенсируется нулями.
      *
      * @param list  список чисел.
      * @param cells колличество ячеек в строке.
@@ -23,9 +23,7 @@ public class ConvertList2Array {
      */
     public static int[][] toArray(List<Integer> list, int cells) {
         int groups = (int) Math.ceil((double) list.size() / cells);
-        //System.out.println(groups);
         int[][] array = new int[groups][cells];
-//        System.out.println(Arrays.deepToString(array));
         int row = 0, cell = 0;
         for (Integer num : list) {
             array[row][cell] = num;
@@ -37,19 +35,4 @@ public class ConvertList2Array {
         }
         return array;
     }
-
-    //Для красоты.
-//    public static void main(String[] args) {
-//        List<Integer> list = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-//        System.out.printf("List: %s; \n", list);
-//        int[][] rsl = toArray(list, 3); //convert
-//        System.out.printf("2ArrayString: %s; \n", Arrays.deepToString(rsl));
-//        System.out.println("2Array:");
-//        for (int[] row : rsl) {
-//            for (int cell : row) {
-//                System.out.print(cell + " ");
-//            }
-//            System.out.println();
-//        }
-//    }
 }

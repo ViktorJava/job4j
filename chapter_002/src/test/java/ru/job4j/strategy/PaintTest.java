@@ -10,6 +10,7 @@ import java.util.StringJoiner;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
+
 /**
  * Тестирование класса Paint.
  *
@@ -18,9 +19,7 @@ import static org.hamcrest.Matchers.is;
  * @since 11.12.2019
  */
 public class PaintTest {
-    // получаем ссылку на стандартный вывод в консоль.
     private final PrintStream stdout = System.out;
-    // Создаем буфер для хранения вывода.
     ByteArrayOutputStream out = new ByteArrayOutputStream();
 
     /**
@@ -44,10 +43,8 @@ public class PaintTest {
 
     @Test
     public void whenDrawSquare() {
-        // выполняем действия пишущие в консоль.
         Paint.draw(new Square());
-        // проверяем результат вычисления
-        assertThat(new String(out.toByteArray()),
+        assertThat(out.toString(),
                 is(new StringJoiner(System.lineSeparator())
                         .add("****")
                         .add("*  *")
@@ -61,7 +58,7 @@ public class PaintTest {
     @Test
     public void whenDrawTriangle() {
         Paint.draw(new Triangle());
-        assertThat(new String(out.toByteArray()),
+        assertThat(out.toString(),
                 is(new StringJoiner(System.lineSeparator())
                         .add("*")
                         .add("**")

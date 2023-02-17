@@ -9,7 +9,7 @@ package ru.job4j.ex;
  */
 public class FindEl {
     /**
-     * Поиск индекса элемена в массиве.
+     * Поиск индекса элемента в массиве.
      *
      * @param value массив данных.
      * @param key   искомое значение.
@@ -25,7 +25,6 @@ public class FindEl {
             }
         }
         if (result == -1) {
-            //обработка пользовательского исключения.
             throw new ElementNotFoundException("Element not found: [" + key + "]");
         }
         return result;
@@ -33,7 +32,6 @@ public class FindEl {
 
     public static void main(String[] args) {
         String[] source = {"One", "Two", "Three"};
-        //Ловим исключение.
         try {
             int index = indexOf(source, "One");
             System.out.println("OK. Item found: " + index);

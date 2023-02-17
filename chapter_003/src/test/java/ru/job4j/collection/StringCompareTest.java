@@ -15,7 +15,6 @@ import static org.hamcrest.core.Is.is;
  * @since 23.05.2020
  */
 public class StringCompareTest {
-    //две строки одинаковы.
     @Test
     public void whenStringsAreEqualThenZero() {
         StringCompare compare = new StringCompare();
@@ -26,7 +25,6 @@ public class StringCompareTest {
         assertThat(rst, is(0));
     }
 
-    // Left больше right (лексикографически).
     @Test
     public void secondCharOfLeftGreaterThanRightShouldBePositive() {
         StringCompare compare = new StringCompare();
@@ -37,7 +35,6 @@ public class StringCompareTest {
         assertThat(rst, greaterThan(0));
     }
 
-    // Left больше right (лексикографически)
     @Test
     public void whenLeftGreaterThanRightResultShouldBePositive() {
         StringCompare compare = new StringCompare();
@@ -48,7 +45,6 @@ public class StringCompareTest {
         assertThat(rst, greaterThan(0));
     }
 
-    // Left меньше right (по длине)
     @Test
     public void whenLeftLessThanRightResultShouldBeNegative() {
         StringCompare compare = new StringCompare();
@@ -69,7 +65,6 @@ public class StringCompareTest {
         assertThat(rst, lessThan(0));
     }
 
-    // Тест алгоритма на пустые строки.
     @Test
     public void whenStringEmpty() {
         StringCompare compare = new StringCompare();
@@ -80,7 +75,6 @@ public class StringCompareTest {
         assertThat(rst, is(0));
     }
 
-    // Тест алгоритма на пустую строку.
     @Test
     public void whenEmptyStringLessThanComplete() {
         StringCompare compare = new StringCompare();

@@ -16,7 +16,6 @@ import static org.hamcrest.Matchers.lessThan;
  * @since 22.05.2020
  */
 public class JobTest {
-    // name по убыванию затем сравнивая priority по убыванию.
     @Test
     public void whenCompatorByNameAndPrority() {
         Comparator<Job> cmpNamePriority = new JobDescByName()
@@ -28,7 +27,6 @@ public class JobTest {
         assertThat(rsl, lessThan(0));
     }
 
-    // priority по возрастанию затем сравнивая name по убыванию.
     @Test
     public void whenCompatorByPriorityAndName() {
         Comparator<Job> cmpPriorityName = new JobAscByPriority()
@@ -40,7 +38,6 @@ public class JobTest {
         assertThat(rsl, greaterThan(0));
     }
 
-    // name по возрастанию.
     @Test
     public void whenCompatorAscendingByName() {
         Comparator<Job> cmpAscendingByName = new JobAscByName();
@@ -51,7 +48,6 @@ public class JobTest {
         assertThat(rsl, greaterThan(0));
     }
 
-    // name по убыванию.
     @Test
     public void whenCompatorDescByName() {
         Comparator<Job> cmpDescByName = new JobDescByName();
@@ -62,7 +58,6 @@ public class JobTest {
         assertThat(rsl, lessThan(0));
     }
 
-    // priority по возрастанию.
     @Test
     public void whenCompatorAscendingByPriority() {
         Comparator<Job> cmpAscendingByPriority = new JobAscByPriority();
@@ -73,7 +68,6 @@ public class JobTest {
         assertThat(rsl, lessThan(0));
     }
 
-    // priority по убыванию
     @Test
     public void whenCompatorDescByPrioruty() {
         Comparator<Job> cmpDescByPriority = new JobDescByPriority();

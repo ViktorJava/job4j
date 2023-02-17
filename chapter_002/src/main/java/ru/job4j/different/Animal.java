@@ -13,7 +13,7 @@ public class Animal {
 
     public Animal(String name) {
         super();
-        this.name = name; // инициализация поля класса через конструктор
+        this.name = name;
         System.out.println("Animal");
     }
 }

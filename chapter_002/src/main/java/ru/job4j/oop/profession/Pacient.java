@@ -11,6 +11,6 @@ public class Pacient {
     private int id;
     private String name;
     private String surname;
-    private int tel; //номер телефона
-    private int policy; //номер страхового полиса
+    private int tel;
+    private int policy;
 }

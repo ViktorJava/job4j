@@ -10,6 +10,6 @@ package ru.job4j.oop.profession;
 public class Project {
     private int number;
     private String name;
-    private long startProject; //дата старта проекта
-    private long deadline; //последний срок
+    private long startProject;
+    private long deadline;
 }

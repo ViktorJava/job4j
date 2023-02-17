@@ -15,7 +15,6 @@ import static org.hamcrest.core.Is.is;
  */
 public class FiTest {
     @Test
-    // Тест сортировки строк по возрастанию длинны.
     public void whenSortByLenght() {
         Fi fInterface = new Fi();
         Attachment[] attachments = {
@@ -28,7 +27,6 @@ public class FiTest {
     }
 
     @Test
-    // Тест сортировки строк в лексикографическом порядке.
     public void whenLexicographicOrder() {
         Fi fInterface = new Fi();
         Attachment[] attachments = {
@@ -41,7 +39,6 @@ public class FiTest {
     }
 
     @Test
-    // Тест сортировки строк по убыванию длинны.
     public void whenDescendingSort() {
         Fi fInterface = new Fi();
         Attachment[] attachments = {

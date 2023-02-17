@@ -6,15 +6,12 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
 /**
- * Класс Unit (JUnit framework) тестов в связке с библиотекой hamcrest
- *
  * @author ViktorJava (gipsyscrew@gmail.com)
  * @version 0.1
  * @since 02.09.2019
  */
 public class FitnessTest {
 
-    //Тест когда тяга Ивана больше тяги Ника на 5 кило
     @Test
     public void whenIvanGreatNik() {
         Fitness fitness = new Fitness();
@@ -22,7 +19,6 @@ public class FitnessTest {
         assertThat(days, is(0));
     }
 
-    //Тест когда тяга Ивана менее тяги Ника на 5 кило
     @Test
     public void whenIvanLessByOneNik() {
         Fitness fitness = new Fitness();
@@ -30,7 +26,6 @@ public class FitnessTest {
         assertThat(days, is(1));
     }
 
-    //Тест когда тяга Ивана значительно слабее тяги Ника на 40 кило
     @Test
     public void whenIvanLessByFewNik() {
         Fitness fitness = new Fitness();

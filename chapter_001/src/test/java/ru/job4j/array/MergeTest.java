@@ -12,7 +12,6 @@ import static org.hamcrest.core.Is.is;
  * @version 0.1
  * @since 16.10.2019
  */
-//@Ignore
 public class MergeTest {
     @Test
     public void whenBothEmpty() {

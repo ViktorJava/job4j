@@ -25,32 +25,28 @@ import static java.util.Arrays.sort;
  */
 public class Fi {
 
-    // Компаратор для строк через лямбда, сортирующий строки по длине.
     public Attachment[] cmpSize(Attachment[] attachment) {
         Comparator<Attachment> cmpSize =
                 (left, right) -> left.getName()
-                                     .length() - right.getName()
-                                                      .length();
+                        .length() - right.getName()
+                        .length();
         sort(attachment, cmpSize);
         return attachment;
     }
 
-    // Компаратор для строк через лямбда. Лексикографическая сортировка строк.
     public Attachment[] cmpText(Attachment[] attachment) {
         Comparator<Attachment> cmpText =
                 (left, right) -> left.getName()
-                                     .compareTo(right.getName());
+                        .compareTo(right.getName());
         sort(attachment, cmpText);
         return attachment;
     }
 
-    // Компаратор для строк через лямбда. Компаратор сортирует
-    // строки по убыванию длины.
     public Attachment[] cmpDescSize(Attachment[] attachment) {
         Comparator<Attachment> cmpDescSize =
                 (left, righ) -> righ.getName()
-                                    .length() - left.getName()
-                                                    .length();
+                        .length() - left.getName()
+                        .length();
         sort(attachment, cmpDescSize);
         return attachment;
     }

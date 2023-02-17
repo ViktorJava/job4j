@@ -27,22 +27,20 @@ public class CollectorAriphmetic {
     public static Integer collect(List<Integer> list) {
         // сюда сложим элементы
         Supplier<List<Integer>> supplier = LinkedList::new;
-        // говорим, как добавлять элементы
         BiConsumer<List<Integer>, Integer> consumer = List::add;
         BinaryOperator<List<Integer>> merger = (xs, ys) -> {
             xs.addAll(ys);
             return xs;
         };
-        // это функция, которая обработает наш список после сборки
         Function<List<Integer>, Integer> function = (ns) -> {
             int number = 1;
-            for (Integer n: ns) {
+            for (Integer n : ns) {
                 number *= n;
             }
             return number;
 
         };
         return list.stream()
-                   .collect(Collector.of(supplier, consumer, merger, function));
+                .collect(Collector.of(supplier, consumer, merger, function));
     }
 }

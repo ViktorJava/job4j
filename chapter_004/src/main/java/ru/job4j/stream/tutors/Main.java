@@ -19,24 +19,14 @@ public class Main {
                 new Dish("salmon", false, 450, FISH),
                 new Dish("pizza", true, 550, OTHER)
         );
-        // Необходимо вернуть список всех уникальных символов содержащихся
-        // в названии блюд.
         List<String> threeHigCaloricDishName = menu
                 .stream()
                 .map(Dish::getName)
-                // Преобразуем каждое из слов в массив букв Stream<String[]>
                 .map(s -> s.split(""))
-                //Принимаем на вход массив и возвращаем поток данных:
-                // Stream<Stream<String>>. По факту, получили из каждого
-                // символа поток данных. Не подходит!
-                //.map(Arrays::stream)
-                //Схлопываем все потоки символов в единый поток.
                 .flatMap(Arrays::stream)
                 .sorted()
                 .distinct()
                 .collect(toList());
         System.out.println(threeHigCaloricDishName);
-
-
     }
 }

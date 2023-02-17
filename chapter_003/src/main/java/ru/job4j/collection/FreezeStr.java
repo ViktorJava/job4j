@@ -23,7 +23,6 @@ public class FreezeStr {
      * иначе false.
      */
     public static boolean eq(String left, String right) {
-        // Строки разные если их длинна разная.
         if (left.length() != right.length()) {
             return false;
         }

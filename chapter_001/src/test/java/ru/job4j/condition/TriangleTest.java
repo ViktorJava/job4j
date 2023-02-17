@@ -12,14 +12,9 @@ import static org.hamcrest.number.IsCloseTo.closeTo;
 public class TriangleTest {
     @Test
     public void whenAreaSetThreePointsThenTriangleArea() {
-        //создаём объект треугольник
         Triangle triangle = new Triangle();
-        //вычисляем площадь
         double result = triangle.area(0, 0, 0, 2, 2, 0);
-        //задаём ожидаемый результат
         double expected = 2D;
-        //проверяем результат и ожидаемое значение
         assertThat(result, closeTo(expected, 0.1));
     }
-
 }

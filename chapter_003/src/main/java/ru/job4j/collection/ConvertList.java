@@ -29,19 +29,3 @@ public class ConvertList {
         return rsl;
     }
 }
-// Для красоты и удовольствия.
-//    public static void main(String[] args) {
-//        List<int[]> in = new ArrayList<>();
-//        in.add(new int[]{1});
-//        in.add(new int[]{2, 3, 4, 5});
-//        in.add(new int[]{6, 7});
-//        System.out.println("before:");
-//        for (int[] row : in) {
-//            for (int cell : row) {
-//                System.out.printf("%d ", cell);
-//            }
-//            System.out.println();
-//        }
-//        System.out.print("\nafter: ");
-//        System.out.println(ConvertList.convert(in));
-//    }

@@ -47,7 +47,6 @@ public class StartUI {
         Input input = new ConsoleInput();
         Input validate = new ValidateInput(input);
         Tracker tracker = new Tracker();
-        //создаём массив действий
         UserAction[] actions = {
                 new CreateAction(),
                 new ShowAllAction(),

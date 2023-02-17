@@ -24,11 +24,8 @@ public class CollectorClass {
      * @return LinkedList коллекция с числами полученными на входе.
      */
     public static List<Integer> collect(List<Integer> list) {
-        //в созданной коллекции будет храниться наш результат.
         Supplier<List<Integer>> supplier = LinkedList::new;
-        //как мы будем собирать элементы в коллекцию.
         BiConsumer<List<Integer>, Integer> biConsumer = List::add;
-        //используем для совмещения результатов параллельных вычислений.
         BinaryOperator<List<Integer>> operator = (left, right) -> {
             left.addAll(right);
             return left;

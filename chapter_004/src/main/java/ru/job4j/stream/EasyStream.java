@@ -47,8 +47,7 @@ public class EasyStream {
      */
     public EasyStream map(Function<Integer, Integer> fun) {
         List<Integer> list = new ArrayList<>();
-        for (Integer element: source) {
-            //fun.apply(element);
+        for (Integer element : source) {
             list.add(fun.apply(element));
         }
         return new EasyStream(list);
@@ -62,7 +61,7 @@ public class EasyStream {
      */
     public EasyStream filter(Predicate<Integer> fun) {
         List<Integer> list = new ArrayList<>();
-        for (Integer element: source) {
+        for (Integer element : source) {
             if (fun.test(element)) {
                 list.add(element);
             }

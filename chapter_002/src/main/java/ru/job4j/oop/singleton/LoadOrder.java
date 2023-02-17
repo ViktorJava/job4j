@@ -1,7 +1,7 @@
 package ru.job4j.oop.singleton;
 
 /**
- * Эксперементальный класс инициализации элементов класса.
+ * Экспериментальный класс инициализации элементов класса.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
  * @version 0.1
@@ -13,12 +13,10 @@ public class LoadOrder {
     private static final String STATIC_FINAL_FIELD = echo("static final field");
 
     static {
-        //статический блок инициализации (class init)
         echo("static block");
     }
 
     {
-        //нестатический блок инициализации (instance init)
         echo("non static block");
     }
 

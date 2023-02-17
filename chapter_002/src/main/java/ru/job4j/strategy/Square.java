@@ -4,7 +4,7 @@ import java.util.StringJoiner;
 
 /**
  * Реализация стратеги Shape.
- * Метод построения пямоугольника
+ * Метод построения прямоугольника
  * используя StringJoiner (Java SE 8).
  *
  * @author ViktorJava (gipsyscrew@gmail.com)

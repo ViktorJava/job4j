@@ -1,7 +1,7 @@
 package ru.job4j.strategy;
 
 /**
- * Interface Shape - описывает ввод данных. Это и есть Strategy.
+ * Interface Shape - описывает вывод данных. Это и есть Strategy.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
  * @version 0.1

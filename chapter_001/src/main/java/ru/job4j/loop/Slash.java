@@ -34,6 +34,7 @@ public class Slash {
     public static void main(String[] args) {
         System.out.println("Draw 3");
         draw(3);
+
         System.out.println("Draw 5");
         draw(5);
     }

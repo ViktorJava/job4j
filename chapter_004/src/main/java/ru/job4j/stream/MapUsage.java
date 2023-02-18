@@ -23,6 +23,8 @@ public class MapUsage {
      * @return Карта студентов.
      */
     public static Map<String, Student> studentsToMap(List<Student> students) {
-        return students.stream().collect(Collectors.toMap(Student::getSurname, Function.identity(), (existing, replacement) -> existing));
+        return students.stream().collect(Collectors.toMap(Student::getSurname,
+                Function.identity(), (existing, replacement) -> existing)
+        );
     }
 }

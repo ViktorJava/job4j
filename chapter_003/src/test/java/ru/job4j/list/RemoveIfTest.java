@@ -8,7 +8,6 @@ import java.util.List;
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-
 /**
  * Тест метода возвращающий список строк,
  * длинна которых 5 и более символов.

@@ -61,7 +61,6 @@ public class BankService {
                 .findFirst();
     }
 
-
     /**
      * Метод ищет счет пользователя по реквизитам.
      * Сначала нужно найти пользователя.
@@ -76,9 +75,9 @@ public class BankService {
         Optional<User> user = findByPassport(passport);
         if (user.isPresent()) {
             result = users.get(user.get()).stream()
-                          .filter(account -> account.getRequisite()
-                                                    .equals(requisite))
-                          .findFirst();
+                    .filter(account -> account.getRequisite()
+                            .equals(requisite))
+                    .findFirst();
         }
         return result;
     }

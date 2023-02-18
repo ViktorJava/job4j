@@ -37,7 +37,9 @@ public class StubInput implements Input {
     public int askInt(String question, int max) {
         int select = this.askInt(question);
         if (select < 0 || select >= max) {
-            throw new IllegalStateException(String.format("Out of about %s > [0, %s]", select, max));
+            throw new IllegalStateException(
+                    String.format("Out of about %s > [0, %s]", select, max)
+            );
         }
         return select;
     }

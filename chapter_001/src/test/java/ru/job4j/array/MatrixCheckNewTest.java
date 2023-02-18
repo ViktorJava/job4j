@@ -3,7 +3,6 @@ package ru.job4j.array;
 import org.junit.Assert;
 import org.junit.Test;
 
-
 /**
  * @author ViktorJava (gipsyscrew@gmail.com)
  * @version 0.1

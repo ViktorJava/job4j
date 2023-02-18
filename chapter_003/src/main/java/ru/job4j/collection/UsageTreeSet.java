@@ -13,7 +13,6 @@ public class UsageTreeSet implements Comparable<Object> {
     private final String name;
     private final int number;
 
-
     public UsageTreeSet(String string, int num) {
         this.name = string;
         this.number = num;

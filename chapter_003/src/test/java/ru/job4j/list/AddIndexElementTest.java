@@ -8,7 +8,6 @@ import java.util.List;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
-
 /**
  * Тесты метода добавления по индексу, элемента в список.
  *

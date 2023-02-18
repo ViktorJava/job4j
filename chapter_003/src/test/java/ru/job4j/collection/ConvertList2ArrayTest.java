@@ -7,7 +7,6 @@ import java.util.List;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
-
 /**
  * Тесты {@code ConvertList2Array.toArray()}.
  *

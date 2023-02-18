@@ -23,7 +23,8 @@ public class TrackerSingleStaticFinalClass {
     }
 
     private static final class Holder {
-        private static final TrackerSingleStaticFinalClass INSTANCE = new TrackerSingleStaticFinalClass();
+        private static final TrackerSingleStaticFinalClass INSTANCE =
+                new TrackerSingleStaticFinalClass();
     }
 
     public static void main(String[] args) {

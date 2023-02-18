@@ -7,7 +7,6 @@ import java.util.Arrays;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
-
 /**
  * Тесты демонстрирующие сортировку данных по возрастанию и по убыванию.
  *
@@ -41,5 +40,4 @@ public class ItemTest {
         tracker.findAll().sort(new NameSortDec());
         assertThat(tracker.findAll(), is(Arrays.asList(item3, item2, item1)));
     }
-
 }

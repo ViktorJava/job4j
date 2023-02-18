@@ -20,7 +20,7 @@ import static org.hamcrest.Matchers.is;
  */
 public class PaintTest {
     private final PrintStream stdout = System.out;
-    ByteArrayOutputStream out = new ByteArrayOutputStream();
+    private ByteArrayOutputStream out = new ByteArrayOutputStream();
 
     /**
      * Заменяем стандартный вывод на вывод в пямять для тестирования.

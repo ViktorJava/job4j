@@ -28,7 +28,8 @@ public class Merge {
         int rslIndex = 0;
         while (counter1 + counter2 != rsl.length) {
             if (counter1 != left.length && counter2 != right.length) {
-                rsl[rslIndex++] = left[counter1] < right[counter2] ? left[counter1++] : right[counter2++];
+                rsl[rslIndex++] = left[counter1] < right[counter2]
+                        ? left[counter1++] : right[counter2++];
             } else if (counter1 != left.length) {
                 rsl[rslIndex++] = left[counter1++];
             } else {

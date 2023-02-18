@@ -4,7 +4,8 @@ import ru.job4j.tracker.Item;
 
 /**
  * enum. Eager loading.
- * Энергичная загрузка (Eager loading) - загружает объект сразу после старта виртуальной машины.
+ * Энергичная загрузка (Eager loading) - загружает объект сразу после старта
+ * виртуальной машины.
  *
  * @author ViktorJava (gipsyscrew@gmail.com)
  * @version 0.1
@@ -13,7 +14,6 @@ import ru.job4j.tracker.Item;
 public enum TrackerSingleEnum {
     INSTANCE;
 
-    //Конструкторы и методы.
     public Item add(Item model) {
         return model;
     }

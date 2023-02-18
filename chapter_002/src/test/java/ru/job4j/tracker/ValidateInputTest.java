@@ -23,7 +23,9 @@ public class ValidateInputTest {
         System.setOut(new PrintStream(mem));
         ValidateInput input = new ValidateInput(new StubInput(new String[]{"stupid", "0"}));
         input.askInt("Enter", 1);
-        assertThat(mem.toString(), is(String.format("Enter%nPlease enter validate data again.%nEnter%n")));
+        assertThat(mem.toString(), is(
+                String.format("Enter%nPlease enter validate data again.%nEnter%n"))
+        );
         System.setOut(out);
     }
 
@@ -34,7 +36,8 @@ public class ValidateInputTest {
         System.setOut(new PrintStream(mem));
         ValidateInput input = new ValidateInput(new StubInput(new String[]{"3", "0"}));
         input.askInt("Enter", 1);
-        assertThat(mem.toString(), is(String.format("Enter%nPlease select key from menu.%nEnter%n")));
+        assertThat(mem.toString(), is(
+                String.format("Enter%nPlease select key from menu.%nEnter%n")));
         System.setOut(out);
     }
 }

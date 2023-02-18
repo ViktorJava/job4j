@@ -9,7 +9,6 @@ import java.util.StringJoiner;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
-
 /**
  * Тестирование метода ShowAllAction().
  *
@@ -28,12 +27,13 @@ public class ShowAllActionTest {
         tracker.add(item);
         ShowAllAction act = new ShowAllAction();
         act.execute(new StubInput(new String[]{}), tracker);
-        String expect = new StringJoiner(System.lineSeparator(), System.lineSeparator(), System.lineSeparator())
+        String expect = new StringJoiner(System.lineSeparator(),
+                System.lineSeparator(), System.lineSeparator())
                 .add("--- Show all items ---")
-                .add("0.[name]: " + item.getName() + " [id]: " + item.getId() + System.lineSeparator())
+                .add("0.[name]: " + item.getName()
+                        + " [id]: " + item.getId() + System.lineSeparator())
                 .toString();
-        assertThat(new String(out.toByteArray()), is(expect));
+        assertThat(out.toString(), is(expect));
         System.setOut(def);
     }
-
 }

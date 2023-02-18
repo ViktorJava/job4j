@@ -26,7 +26,6 @@ public class MethodReferenceTest {
         System.setOut(before);
     }
 
-
     @Test
     public void whenByInstance() {
         PrintStream before = System.out;

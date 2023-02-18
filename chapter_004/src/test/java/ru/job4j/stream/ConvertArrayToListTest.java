@@ -8,7 +8,6 @@ import java.util.List;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
-
 /**
  * Тест матрицы чисел, целочисленного типа,
  * в список данных целочисленного типа.

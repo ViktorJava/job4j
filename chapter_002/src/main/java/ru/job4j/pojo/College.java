@@ -15,6 +15,8 @@ public class College {
         student.setFullName("Vdovichenko Viktor");
         student.setGroup("T-12");
         student.setStartDate(new Date());
-        System.out.println("Студент: " + student.getFullName() + ", зачислен: " + student.getStartDate() + " в группу: " + student.getGroup());
+        System.out.println("Студент: " + student.getFullName()
+                + ", зачислен: " + student.getStartDate()
+                + " в группу: " + student.getGroup());
     }
 }

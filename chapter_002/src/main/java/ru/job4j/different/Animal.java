@@ -9,7 +9,7 @@ package ru.job4j.different;
  * @since 03.11.2019
  */
 public class Animal {
-    String name;
+    private String name;
 
     public Animal(String name) {
         super();

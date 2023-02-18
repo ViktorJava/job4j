@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
  */
 public class CountingMethod {
     public static class Company {
-        String name;
+        private String name;
 
         public Company(String name) {
             this.name = name;
@@ -28,8 +28,8 @@ public class CountingMethod {
     }
 
     public static class Worker {
-        int age;
-        Company company;
+        private int age;
+        private Company company;
 
         public Worker(int age, Company company) {
             this.age = age;
@@ -49,8 +49,8 @@ public class CountingMethod {
      */
     public static Map<String, Long> groupAndCount(List<Worker> workers) {
         Function<Worker, String> convert = (s) -> s.getCompany()
-                                                   .getName();
+                .getName();
         return workers.stream()
-                      .collect(Collectors.groupingBy(convert, Collectors.counting()));
+                .collect(Collectors.groupingBy(convert, Collectors.counting()));
     }
 }

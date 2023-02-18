@@ -10,7 +10,6 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 import static ru.job4j.map.RemoveElements.User;
 
-
 /**
  * Удаление пар ключ-значение из отображения.
  *

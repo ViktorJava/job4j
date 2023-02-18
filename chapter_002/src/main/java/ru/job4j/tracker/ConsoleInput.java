@@ -42,14 +42,16 @@ public class ConsoleInput implements Input {
      * экзепшена.
      *
      * @param question запрос ввода данных.
-     * @param max      максимальное значение даипазона.
+     * @param max      максимальное значение диапазона.
      * @return введённые в виде строки данные целочисленного типа.
      */
     @Override
     public int askInt(String question, int max) {
         int select = this.askInt(question);
         if (select < 0 || select >= max) {
-            throw new IllegalStateException(String.format("Out of about %s > [0, %s]", select, max));
+            throw new IllegalStateException(
+                    String.format("Out of about %s > [0, %s]", select, max)
+            );
         }
         return select;
     }

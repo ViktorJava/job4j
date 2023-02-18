@@ -5,7 +5,6 @@ import org.junit.Test;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
-
 /**
  * Тест того случая, когда задачи сортируются в связанном списке,
  * согласно приоритету задачи, в порядке уменьшения приоритетности.

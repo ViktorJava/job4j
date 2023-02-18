@@ -6,8 +6,8 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.hamcrest.core.Is.is;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.Is.is;
 
 /**
  * Тест, получения части списка.
@@ -17,7 +17,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
  * @since 20.11.2020
  */
 public class SubListTest {
-    List<String> list = new ArrayList<>();
+    private List<String> list = new ArrayList<>();
 
     @Before
     public void setup() {

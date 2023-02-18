@@ -5,8 +5,8 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.hamcrest.core.Is.is;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.Is.is;
 
 /**
  * Тесты добавления элементов в store если элемента ещё там нет.
@@ -37,6 +37,7 @@ public class GetOrDefaultTest {
         List<String> value = get.getValue(10);
         assertThat(value, is(new ArrayList<>()));
     }
+
     @Test
     public void whenAddListWithDuplicateKey() {
         List<String> list = List.of("one", "two", "three");

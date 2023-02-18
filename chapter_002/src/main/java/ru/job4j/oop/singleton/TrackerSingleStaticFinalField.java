@@ -12,7 +12,8 @@ import ru.job4j.tracker.Item;
  * @since 03.01.2020
  */
 public class TrackerSingleStaticFinalField {
-    private static final TrackerSingleStaticFinalField INSTANCE = new TrackerSingleStaticFinalField();
+    private static final TrackerSingleStaticFinalField INSTANCE =
+            new TrackerSingleStaticFinalField();
 
     public TrackerSingleStaticFinalField() {
     }
@@ -26,6 +27,7 @@ public class TrackerSingleStaticFinalField {
     }
 
     public static void main(String[] args) {
-        TrackerSingleStaticFinalField trackerSingleStaticFinalField = TrackerSingleStaticFinalField.getInstance();
+        TrackerSingleStaticFinalField trackerSingleStaticFinalField =
+                TrackerSingleStaticFinalField.getInstance();
     }
 }

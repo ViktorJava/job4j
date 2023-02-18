@@ -14,7 +14,6 @@ import static org.hamcrest.core.Is.is;
  * @version 0.1
  * @since 02.01.2021
  */
-
 public class AnalyzeTest {
     /**
      * Средний балл, когда один ученик.
@@ -39,7 +38,7 @@ public class AnalyzeTest {
                                 new Subject("Math", 100))),
                         new Pupil("Petrov", List.of(
                                 new Subject("Math", 60))))
-                    .stream()
+                        .stream()
         );
         assertThat(average, is(80D));
     }
@@ -78,7 +77,7 @@ public class AnalyzeTest {
                         new Pupil("Petrov", List.of(
                                 new Subject("Math", 60),
                                 new Subject("Lang", 80))))
-                    .stream());
+                        .stream());
         assertThat(average, is(List.of(
                 new Tuple("Math", 80D),
                 new Tuple("Lang", 75D)
@@ -98,7 +97,7 @@ public class AnalyzeTest {
                         new Pupil("Petrov", List.of(
                                 new Subject("Math", 60),
                                 new Subject("Lang", 60))))
-                    .stream());
+                        .stream());
         assertThat(best, is(new Tuple("Petrov", 120D)));
     }
 
@@ -115,7 +114,7 @@ public class AnalyzeTest {
                         new Pupil("Petrov", List.of(
                                 new Subject("Math", 60),
                                 new Subject("Lang", 60))))
-                    .stream());
+                        .stream());
         assertThat(best, is(new Tuple("Math", 160D)));
     }
 }

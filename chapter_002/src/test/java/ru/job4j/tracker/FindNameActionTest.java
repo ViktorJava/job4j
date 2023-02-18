@@ -27,14 +27,15 @@ public class FindNameActionTest {
         tracker.add(item);
         FindNameAction act = new FindNameAction();
         act.execute(new StubInput(new String[]{"fix bug"}), tracker);
-        String expect = new StringJoiner(System.lineSeparator(), System.lineSeparator(), System.lineSeparator())
+        String expect = new StringJoiner(System.lineSeparator(),
+                System.lineSeparator(), System.lineSeparator())
                 .add("--- Find items by name ---")
                 .add("Enter item name: ")
                 .add("please wait...")
                 .add("[name]: " + item.getName() + " [id]: " + item.getId())
                 .add("(Info) search over" + System.lineSeparator())
                 .toString();
-        assertThat(new String(out.toByteArray()), is(expect));
+        assertThat(out.toString(), is(expect));
         System.setOut(def);
 
     }

@@ -1,7 +1,7 @@
 package ru.job4j.oop.factorymethod;
 
 /**
- * Руководство найшей фабрики производящей разную воду.
+ * Руководство нашей фабрики производящей разную воду.
  * Знает что фабрика производит воду, но как она это делает, не знает.
  * Это говорит абстрактный метод create().
  * Принимает от диспетчера, команды на производство определённой продукции,
@@ -13,7 +13,7 @@ package ru.job4j.oop.factorymethod;
  * @since 16.05.2020
  */
 abstract class Factory {
-    public int flag;
+    private int flag;
 
     public Factory(int flag) {
         this.flag = flag;

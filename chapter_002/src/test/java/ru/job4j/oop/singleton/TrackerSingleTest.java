@@ -17,7 +17,6 @@ public class TrackerSingleTest {
     public void singletonTSSFC() {
         TrackerSingleStaticFinalClass tracker = TrackerSingleStaticFinalClass.getInstance();
         TrackerSingleStaticFinalClass tracker2 = TrackerSingleStaticFinalClass.getInstance();
-        //утверждаем, что два объекта ссылаются на один и тот же объект.
         assertSame(tracker, tracker2);
     }
 

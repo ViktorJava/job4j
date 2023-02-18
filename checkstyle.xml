@@ -4,13 +4,21 @@
         "http://www.puppycrawl.com/dtds/configuration_1_3.dtd">
 
 <module name="Checker">
+    <!--Кодировка файлов только UTF-8-->
+    <property name="charset" value="UTF-8"/>
 
     <!--Расширение файла должно быть java, properties, xml-->
     <property name="fileExtensions" value="java, properties, xml"/>
 
-    <!-- Checks for Size Violations.                    -->
+    <!-- Checks for Size Violations. File length. Default: 2000 lines -->
     <!-- See http://checkstyle.sf.net/config_sizes.html -->
     <module name="FileLength"/>
+
+    <!-- Line length. Derault line length: 80ch -->
+    <module name="LineLength">
+        <property name="fileExtensions" value="java"/>
+        <property name="max" value="100"/>
+    </module>
 
     <!-- Checks for Headers                                -->
     <!-- See http://checkstyle.sf.net/config_header.html   -->
@@ -20,6 +28,20 @@
     <!-- </module> -->
 
     <module name="TreeWalker">
+        <!-- Проверяет порядок расположения элементов в классе.                      -->
+        <!-- Последовательность расположения переменных, конструкторов, методов.     -->
+        <module name="DeclarationOrder"/>
+
+        <!-- Методы, конструкторы и переменные отделены друг от друга только одной пустой строкой. -->
+        <module name="EmptyLineSeparator">
+            <property name="tokens" value="
+            CLASS_DEF, ENUM_DEF, INTERFACE_DEF, CTOR_DEF, STATIC_INIT, INSTANCE_INIT, VARIABLE_DEF, METHOD_DEF"/>
+            <property name="allowNoEmptyLineBetweenFields" value="true"/>
+            <property name="allowMultipleEmptyLines" value="false"/>
+            <property name="allowMultipleEmptyLinesInsideClassMembers" value="false"/>
+        </module>
+        <!-- Проверка видимости членов класса -->
+        <module name="VisibilityModifier"/>
 
         <!-- Checks for Naming Conventions.                  -->
         <!-- See http://checkstyle.sf.net/config_naming.html -->
@@ -35,13 +57,18 @@
         <module name="StaticVariableName"/>
         <module name="TypeName"/>
 
-        <!-- Checks for Size Violations.                    -->
+        <!-- Количество строк в методах и конструкторах. Default: 150 -->
         <!-- See http://checkstyle.sf.net/config_sizes.html -->
         <!--<module name="LineLength"/>-->
-        <module name="MethodLength"/>
+        <module name="MethodLength">
+            <property name="tokens" value="METHOD_DEF"/>
+            <property name="max" value="100"/>
+        </module>
+        <!-- Количество объявленных параметров в методе или конструкторе. Default: 7 -->
         <module name="ParameterNumber"/>
 
-        <!-- Checks for whitespace                               -->
+        <!-- Проверка различных операторов и конструкций -->
+        <!-- на наличие пробела перед ними / после них.  -->
         <!-- See http://checkstyle.sf.net/config_whitespace.html -->
         <module name="EmptyForIteratorPad"/>
         <module name="GenericWhitespace"/>
@@ -57,10 +84,9 @@
         <!-- Modifier Checks                                    -->
         <!-- See http://checkstyle.sf.net/config_modifiers.html -->
 
-        <!-- Checks for blocks. You know, those {}'s         -->
+        <!-- Модули проверки оформления блоков кода {}.         -->
         <!-- See http://checkstyle.sf.net/config_blocks.html -->
         <module name="AvoidNestedBlocks"/>
-        <module name="EmptyBlock"/>
         <module name="LeftCurly"/>
         <module name="NeedBraces"/>
         <module name="RightCurly"/>
@@ -68,14 +94,19 @@
         <!-- Checks for common coding problems               -->
         <!-- See http://checkstyle.sf.net/config_coding.html -->
         <!--<module name="AvoidInlineConditionals"/>-->
-        <module name="EmptyStatement"/>
-        <module name="EqualsHashCode"/>
+        <module name="EmptyStatement"/> <!-- После условия if не должно быть ;-->
+        <module name="EqualsHashCode"/> <!-- При переопределении метода equals(), также переопределён и hashcode() -->
         <!--<module name="HiddenField"/>-->
+        <!-- Предпочтение отдаётся созданию объекта через фабричный метод, нежели через конструктор. -->
         <module name="IllegalInstantiation"/>
+        <!-- Все присваивания должны выполняться вне условий и подвыражений. -->
         <module name="InnerAssignment"/>
         <!--<module name="MagicNumber"/>-->
+        <!-- наличие default в операторе switch. -->
         <module name="MissingSwitchDefault"/>
+        <!-- есть ли более простой способ работы с boolean-переменными -->
         <module name="SimplifyBooleanExpression"/>
+        <!-- проверяет наличие усложненных операторов return. -->
         <module name="SimplifyBooleanReturn"/>
 
         <!-- Checks for class design                         -->
@@ -91,7 +122,10 @@
         <!--<module name="FinalParameters"/>-->
         <module name="TodoComment"/>
         <module name="UpperEll"/>
-
+        <module name="EmptyBlock"/>
+        <module name="EmptyBlock">
+            <property name="tokens" value="LITERAL_CATCH"/>
+        </module>
     </module>
 
 </module>

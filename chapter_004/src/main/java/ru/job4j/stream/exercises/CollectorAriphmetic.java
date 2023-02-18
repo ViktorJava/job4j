@@ -25,7 +25,6 @@ public class CollectorAriphmetic {
      * @return Результат умножения чисел из списка, по порядку.
      */
     public static Integer collect(List<Integer> list) {
-        // сюда сложим элементы
         Supplier<List<Integer>> supplier = LinkedList::new;
         BiConsumer<List<Integer>, Integer> consumer = List::add;
         BinaryOperator<List<Integer>> merger = (xs, ys) -> {

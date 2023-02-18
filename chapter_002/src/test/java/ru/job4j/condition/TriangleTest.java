@@ -2,8 +2,7 @@ package ru.job4j.condition;
 
 import org.junit.Test;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  * @author ViktorJava (gipsyscrew@gmail.com)
@@ -13,18 +12,12 @@ import static org.junit.Assert.*;
 public class TriangleTest {
     @Test
     public void whenAreaSetThreePointsThenTriangleArea() {
-        // координаты вершин треугольника
         Point first = new Point(0, 0);
         Point second = new Point(3, 0);
         Point third = new Point(0, 4);
-        //создаём объект треугольник
         Triangle triangle = new Triangle(first, second, third);
-        //вычисляем площадь
         double result = triangle.area();
-        //задаём ожидаемый результат
         double expected = 6D;
-        //проверяем результат и ожидаемое значение
-//        assertThat(result, is(expected));
         assertEquals(result, expected, 0.01);
     }
 }

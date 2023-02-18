@@ -13,7 +13,7 @@ package ru.job4j.oop.factorymethod;
  * @since 16.05.2020
  */
 abstract class Factory {
-    private int flag;
+    int flag;
 
     public Factory(int flag) {
         this.flag = flag;

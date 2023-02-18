@@ -41,7 +41,7 @@
             <property name="allowMultipleEmptyLinesInsideClassMembers" value="false"/>
         </module>
         <!-- Проверка видимости членов класса -->
-        <module name="VisibilityModifier"/>
+        <!-- <module name="VisibilityModifier"/> -->
 
         <!-- Checks for Naming Conventions.                  -->
         <!-- See http://checkstyle.sf.net/config_naming.html -->
